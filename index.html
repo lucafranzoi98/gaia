@@ -25,7 +25,7 @@
       <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav id="nav" class="nav">
         <a href="#chi-sono">Chi sono</a>
-        <a href="#come-lavoro">Come lavoro</a>
+        <a href="#approccio">Come lavoro</a>
         <a href="#servizi">Servizi</a>
         <a href="#quando">Quando iniziare</a>
         <a href="#contatti" class="nav-cta">Prenota un colloquio</a>
@@ -49,9 +49,12 @@
         <div class="hero-media reveal">
           <span class="shape shape-yellow" aria-hidden="true"></span>
           <span class="shape shape-sky" aria-hidden="true"></span>
-          <div class="ph ph-hero" role="img" aria-label="Ritratto"><span>Foto 1 · Ritratto</span></div>
+          <picture class="hero-photo">
+            <source type="image/webp" srcset="img/gaia-ritratto-600.webp 600w, img/gaia-ritratto.webp 1000w" sizes="(max-width: 960px) 86vw, 460px">
+            <img src="img/gaia-ritratto.jpg" width="1000" height="1333" alt="Ritratto della Dott.ssa Gaia Riccobono" fetchpriority="high">
+          </picture>
           <span class="pill pill-a"><i class="ico ico-pin" aria-hidden="true"></i> In studio a Lecco</span>
-          <span class="pill pill-b"><i class="ico ico-screen" aria-hidden="true"></i> Anche online</span>
+          <span class="pill pill-b"><i class="ico ico-screen" aria-hidden="true"></i> Online</span>
         </div>
       </div>
     </section>
@@ -193,12 +196,20 @@
           <p class="eyebrow">Contatti</p>
           <h2>Facciamo un primo passo insieme</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ti risponderò entro sed do eiusmod tempor.</p>
+          <div class="vcard-wrap"><div class="vcard">
+            <div class="vcard-head">
+              <span class="brand-mark" aria-hidden="true">G</span>
+              <div>
+                <strong>Dott.ssa Gaia Riccobono</strong>
+                <span>Psicologa · in studio e online</span>
+              </div>
+            </div>
           <ul class="contact-list">
             <li><span class="ci"><i class="ico ico-pin" aria-hidden="true"></i></span><div><small>Studio</small><a href="https://www.google.com/maps/search/?api=1&query=Piazza+Stazione+3,+23900+Lecco+LC" target="_blank" rel="noopener">Piazza Stazione 3, 23900 Lecco</a></div></li>
             <li><span class="ci"><i class="ico ico-phone" aria-hidden="true"></i></span><div><small>Telefono</small><a href="tel:+393452671279">345 267 1279</a></div></li>
             <li><span class="ci"><i class="ico ico-mail" aria-hidden="true"></i></span><div><small>Email</small><a href="mailto:riccobonogaia.psi@gmail.com">riccobonogaia.psi@gmail.com</a></div></li>
-            <li><span class="ci"><i class="ico ico-screen" aria-hidden="true"></i></span><div><small>Modalità</small>In studio e online</div></li>
           </ul>
+          </div></div>
         </div>
         <form class="form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <!-- Sostituisci con la tua access key di web3forms.com -->
