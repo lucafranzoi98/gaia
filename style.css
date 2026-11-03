@@ -23,10 +23,11 @@
   --accent-hover: #E77E15;
   --accent-soft: rgba(245,143,41,.38);
   --neutral: #F1EFE9;     /* grigio caldo per piccoli fondi */
+  --lilac-soft: #EEF0FD;  /* fondo lilla chiarissimo (Quando iniziare) */
   --on-blue: #E4E8F7;     /* testo secondario su fondi blu */
   --on-sky: #2F3866;      /* testo secondario su fondo lilla */
   --blue-soft: #5A77C2;   /* decorazioni sulla fascia blu */
-  --on-ink: var(--on-ink);      /* testo secondario nel footer */
+  --on-ink: #A9B6C7;      /* testo secondario nel footer */
 
   --ph: #D6DBF2;          /* segnaposto foto */
 
@@ -60,7 +61,6 @@ mark {
 }
 
 .wrap { max-width: var(--w); margin: 0 auto; padding: 0 24px; }
-.center { text-align: center; margin-top: 48px; }
 .eyebrow {
   display: inline-block; font: 600 .78rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase;
   color: var(--blue); margin-bottom: 18px;
@@ -106,11 +106,8 @@ mark {
 }
 .header-inner { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand-mark {
-  width: 44px; height: 44px; border-radius: 50%; background: var(--blue); color: #fff;
-  display: grid; place-items: center; font: 700 1.35rem/1 var(--display); flex: none;
-  box-shadow: 4px 4px 0 var(--accent);
-}
+.brand-logo { display: block; height: 40px; width: auto; flex: none; }
+.brand-icon { display: none; height: 38px; width: auto; flex: none; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-text strong { font: 600 1.15rem var(--display); letter-spacing: -.01em; }
 .brand-text small { color: var(--ink-soft); font-size: .8rem; }
@@ -128,7 +125,8 @@ mark {
 .section { padding: 120px 0; }
 .section-tight { padding: 0 0 40px; }
 .section-alt { background: var(--surface); }
-.section-services { background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 100%); }
+.section-lilac { background: var(--lilac-soft); }
+.section-lilac .thoughts li { background: var(--surface); }
 .section-head { max-width: 660px; margin-bottom: 52px; }
 .section-head p:last-child { color: var(--ink-soft); }
 
@@ -175,13 +173,14 @@ mark {
 
 /* Chi sono */
 .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: center; }
-.about-media { position: relative; }
+.about-media { position: relative; width: 85%; justify-self: center; }
 .about-photo { display: block; position: relative; z-index: 1; }
 .about-photo img {
   display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
   border-radius: var(--r); background: var(--ph);
 }
-.shape-blob { inset: 7% -6% -6% 7%; background: var(--sky); border-radius: var(--r); }
+.about-shape-a { width: 46%; aspect-ratio: 1; background: var(--sky); top: -5%; left: -8%; }
+.about-shape-b { width: 20%; aspect-ratio: 1; background: var(--accent); bottom: 7%; right: -6%; }
 .tabs { margin-top: 24px; }
 .tablist { display: inline-flex; gap: 4px; padding: 4px; border-radius: 99px; background: var(--neutral); margin-bottom: 22px; max-width: 100%; }
 .tablist [role=tab] {
@@ -229,6 +228,7 @@ mark {
 .services-tabs .tablist { margin-bottom: 36px; }
 .services-tabs .tabpanel[hidden] { display: none; }
 .fuori-text { max-width: 660px; color: var(--ink-soft); }
+.panel-intro { max-width: 660px; color: var(--ink-soft); margin-bottom: 40px; }
 /* Servizi: tre pubblici affiancati, senza immagini */
 .services { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); }
 .service { padding: 8px 36px 8px; border-left: 1px solid var(--line); }
@@ -274,10 +274,10 @@ mark {
 .thoughts-end strong { color: var(--ink); }
 
 /* Contatti */
-.section-contact { background: linear-gradient(180deg, var(--surface) 0%, var(--neutral) 100%); position: relative; overflow: hidden; }
+.section-contact { background: var(--surface); position: relative; overflow: hidden; }
 .section-contact .wrap { position: relative; z-index: 1; }
 .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: start; }
-.contact-grid > div > p { color: var(--ink-soft); }
+.contact-grid > div > p:not(.eyebrow) { color: var(--ink-soft); }
 /* Biglietto da visita */
 .vcard-wrap { position: relative; margin-top: 40px; max-width: 460px; }
 .vcard-wrap::before { /* cerchio lilla dietro al biglietto */
@@ -287,12 +287,12 @@ mark {
 .vcard {
   position: relative; z-index: 1;
   background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: var(--r); padding: 30px 32px 28px;
-  transform: rotate(-2deg); transition: transform .4s cubic-bezier(.2,.8,.2,1);
+  transition: transform .4s cubic-bezier(.2,.8,.2,1);
   box-shadow: 0 30px 50px -30px rgba(27,35,64,.35);
 }
-.vcard:hover { transform: rotate(0deg) translateY(-4px); }
+.vcard:hover { transform: translateY(-4px); }
 .vcard-head { display: flex; align-items: center; gap: 14px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
-.vcard-head .brand-mark { background: var(--blue); color: #fff; }
+.vcard-icon { display: block; width: 48px; height: 48px; flex: none; }
 .vcard-head strong { display: block; font: 700 1.15rem/1.2 var(--display); letter-spacing: -.01em; }
 .vcard-head span { font-size: .85rem; color: var(--ink-soft); }
 .contact-list { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 14px; }
@@ -340,6 +340,7 @@ mark {
 .site-footer { background: var(--ink); color: var(--on-ink); padding: 40px 0; font-size: .88rem; }
 .site-footer .brand-text strong { color: #fff; }
 .site-footer .brand { align-items: flex-start; }
+.site-footer .brand-logo { height: 44px; margin-top: 2px; }
 .footer-meta { display: grid; gap: 2px; margin-top: 6px; font-size: .82rem; color: var(--on-ink); line-height: 1.45; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
 .footer-nav { display: flex; gap: 22px; }
@@ -389,10 +390,9 @@ mark {
   }
   .service:first-child { border-top: 0; padding-top: 0; }
   .service-ico { grid-row: span 2; margin: 0; }
-  .vcard { transform: rotate(-1deg); }
   .vcard-wrap { max-width: none; }
   .thoughts li { font-size: 1rem; padding: 14px 20px; }
-  .about-media { max-width: 420px; width: 90%; }
+  .about-media { max-width: 360px; width: 76%; }
   .about-grid { gap: 64px; }
   .section { padding: 64px 0; }
   .band { padding: 64px 0; }
@@ -441,7 +441,7 @@ mark {
   .site-footer { padding: 40px 0 28px; }
   .footer-inner { gap: 28px; align-items: stretch; }
   .site-footer .brand { gap: 14px; }
-  .site-footer .brand-mark { width: 40px; height: 40px; font-size: 1.2rem; }
+  .site-footer .brand-logo { height: 38px; }
   .footer-meta { font-size: .8rem; gap: 4px; margin-top: 8px; }
   .footer-nav {
     gap: 8px 24px; flex-wrap: wrap; justify-content: center; padding-top: 20px;
@@ -454,4 +454,6 @@ mark {
   .form { padding: 24px; }
   .footer-inner { flex-direction: column; align-items: stretch; }
   .site-header .brand-text small { display: none; }
+  .site-header .brand-logo { display: none; }
+  .site-header .brand-icon { display: block; }
 }
