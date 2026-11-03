@@ -180,14 +180,15 @@ mark {
 .tablist [role=tab] {
   font: 600 .92rem var(--sans); color: var(--ink-soft); background: none; border: 0; cursor: pointer;
   padding: 10px 18px; border-radius: 99px; transition: background .2s, color .2s;
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation;
 }
 .tablist [role=tab]:hover { color: var(--ink); }
 .tablist [role=tab][aria-selected=true] { background: var(--blue); color: #fff; }
 .tablist [role=tab]:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 /* pannelli sovrapposti nella stessa cella: l'altezza resta quella del più alto, niente salti */
 .tabpanels { display: grid; }
-.tabpanel { grid-area: 1 / 1; animation: tabIn .35s ease; }
-.tabpanel[hidden] { display: block; visibility: hidden; animation: none; }
+.tabpanel { grid-area: 1 / 1; }
+.tabpanel[hidden] { display: block; visibility: hidden; }
 .edu { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; position: relative; }
 .edu::before { /* linea del percorso */
   content: ""; position: absolute; left: 6px; top: 10px; bottom: 10px; width: 2px; border-radius: 2px; background: var(--sky);
@@ -199,8 +200,6 @@ mark {
 }
 .edu strong { font-weight: 600; font-size: 1rem; line-height: 1.4; }
 .edu small { font-size: .78rem; color: var(--ink-soft); }
-@keyframes tabIn { from { opacity: 0; transform: translateY(6px); } }
-@media (prefers-reduced-motion: reduce) { .tabpanel { animation: none; } }
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
 .stats div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 18px; }
 .stats strong { display: block; font: 700 1.7rem/1.1 var(--display); color: var(--blue); }
