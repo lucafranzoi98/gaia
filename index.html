@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="it">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,9 +8,12 @@
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -28,7 +32,7 @@
         <a href="#approccio">Come lavoro</a>
         <a href="#servizi">Servizi</a>
         <a href="#quando">Quando iniziare</a>
-        <a href="#contatti" class="nav-cta">Prenota un colloquio</a>
+        <a href="#contatti" class="nav-cta">Richiedi un colloquio</a>
       </nav>
     </div>
   </header>
@@ -40,7 +44,8 @@
       <div class="wrap hero-grid">
         <div class="hero-text reveal">
           <h1>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipiscing elit.</h1>
-          <p class="lead">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Per adolescenti, giovani adulti e adulti.</p>
+          <p class="lead">Sono una psicologa per il benessere specializzata in psicologia positiva, offro percorsi di
+            supporto psicologico in presenza e online per adolescenti, giovani adulti e adulti.</p>
           <div class="btn-row">
             <a href="#contatti" class="btn btn-primary">Richiedi un primo colloquio</a>
             <a href="#quando" class="btn btn-ghost">Quando può essere utile</a>
@@ -50,8 +55,10 @@
           <span class="shape shape-yellow" aria-hidden="true"></span>
           <span class="shape shape-sky" aria-hidden="true"></span>
           <picture class="hero-photo">
-            <source type="image/webp" srcset="img/gaia-ritratto-600.webp 600w, img/gaia-ritratto.webp 1000w" sizes="(max-width: 960px) 86vw, 460px">
-            <img src="img/gaia-ritratto.jpg" width="1000" height="1333" alt="Ritratto della Dott.ssa Gaia Riccobono" fetchpriority="high">
+            <source type="image/webp" srcset="img/gaia-ritratto-600.webp 600w, img/gaia-ritratto.webp 1000w"
+              sizes="(max-width: 960px) 86vw, 460px">
+            <img src="img/gaia-ritratto.jpg" width="1000" height="1333" alt="Ritratto della Dott.ssa Gaia Riccobono"
+              fetchpriority="high">
           </picture>
           <span class="pill pill-a"><i class="ico ico-pin" aria-hidden="true"></i> In studio a Lecco</span>
           <span class="pill pill-b"><i class="ico ico-screen" aria-hidden="true"></i> Online</span>
@@ -97,9 +104,27 @@
         <div class="about-text reveal">
           <p class="eyebrow">Chi sono</p>
           <h2>Lorem ipsum dolor sit amet, sono Gaia</h2>
-          <p class="lead">Psicologa iscritta all'Albo degli Psicologi della Regione Lombardia, n. 00000.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-          <p>Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+          <p class="albo">Psicologa iscritta all'Albo degli Psicologi della Regione Lombardia, n. 29606.</p>
+          <div class="tabs">
+            <div class="tablist" role="tablist" aria-label="Chi sono">
+              <button type="button" role="tab" id="tab-visione" aria-controls="panel-visione" aria-selected="true">La mia visione</button>
+              <button type="button" role="tab" id="tab-due" aria-controls="panel-due" aria-selected="false" tabindex="-1">Formazione</button>
+            </div>
+            <div class="tabpanels">
+            <div class="tabpanel" role="tabpanel" id="panel-visione" aria-labelledby="tab-visione">
+              <p>Credo nella relazione che cura e vedo il supporto psicologico come un'occasione per aprire nuove possibilità quando la storia di vita ha portato a una condizione di malessere: insieme riscriviamo quella storia, dandole nuovi significati e creando nuove prospettive di sviluppo.</p>
+              <p>Presto attenzione all'unicità e alle risorse di ciascuna persona, per favorirne la crescita attraverso processi di empowerment e sostenerla nello sviluppo di strategie resilienti con cui affrontare le difficoltà.</p>
+            </div>
+            <div class="tabpanel" role="tabpanel" id="panel-due" aria-labelledby="tab-due" hidden>
+              <ol class="edu">
+                <li><strong>Corso di formazione "Lavorare come Psicologo Fuori Studio"</strong></li>
+                <li><strong>Master in Relazioni d'aiuto in contesti di sviluppo e cooperazione nazionale e internazionale</strong><small>Università Cattolica del Sacro Cuore, Milano</small></li>
+                <li><strong>Laurea Magistrale in Psicologia per il benessere: empowerment, riabilitazione e tecnologia positiva</strong><small>Università Cattolica del Sacro Cuore, Milano</small></li>
+                <li><strong>Laurea Triennale in Scienze e tecniche psicologiche</strong><small>Università Cattolica del Sacro Cuore, Milano</small></li>
+              </ol>
+            </div>
+            </div>
+          </div>
           <div class="stats">
             <div><strong>00+</strong><span>anni di esperienza</span></div>
             <div><strong>Lorem</strong><span>formazione specialistica</span></div>
@@ -113,10 +138,25 @@
     <section id="approccio" class="band">
       <span class="band-circle c1" aria-hidden="true"></span>
       <span class="band-circle c2" aria-hidden="true"></span>
-      <div class="wrap band-inner reveal">
-        <p class="eyebrow">Il mio approccio</p>
-        <p class="band-quote">«Curabitur sodales ligula in libero. Sed dignissim lacinia nunc, <mark>curabitur tortor</mark> pellentesque nibh aenean quam.»</p>
-        <p class="band-text">Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum, nulla metus metus.</p>
+      <div class="wrap band-inner">
+        <div class="band-head reveal">
+          <p class="eyebrow">Il mio approccio</p>
+          <h2>Due sguardi, <mark>un unico percorso</mark></h2>
+          <p class="band-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integro due approcci per adattare il lavoro a ogni persona.</p>
+        </div>
+        <div class="approaches">
+          <div class="approach reveal">
+            <h3>Nome del primo approccio</h3>
+            <p>Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum, nulla metus metus, ullamcorper vel, tincidunt sed.</p>
+            <ul class="keywords"><li>Lorem</li><li>Ipsum</li><li>Dolor</li></ul>
+          </div>
+          <div class="approach-divider" aria-hidden="true"></div>
+          <div class="approach reveal">
+            <h3>Nome del secondo approccio</h3>
+            <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor, pellentesque nibh. Aenean quam, in scelerisque sem at dolor maecenas mattis.</p>
+            <ul class="keywords"><li>Sit amet</li><li>Consectetur</li><li>Elit</li></ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -134,10 +174,14 @@
             <div class="service-body">
               <span class="service-num">01</span>
               <h3>Adolescenti</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-              <ul class="topics"><li>Scuola</li><li>Emozioni</li><li>Relazioni</li></ul>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+              </p>
+              <ul class="topics">
+                <li>Scuola</li>
+                <li>Emozioni</li>
+                <li>Relazioni</li>
+              </ul>
             </div>
-            <a href="#contatti" class="service-go" aria-label="Prenota: adolescenti">→</a>
           </article>
           <article class="service s2 reveal">
             <div class="service-art ph" role="img" aria-label="Foto servizio"><span>Foto</span></div>
@@ -145,9 +189,12 @@
               <span class="service-num">02</span>
               <h3>Giovani adulti</h3>
               <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-              <ul class="topics"><li>Università</li><li>Scelte</li><li>Autonomia</li></ul>
+              <ul class="topics">
+                <li>Università</li>
+                <li>Scelte</li>
+                <li>Autonomia</li>
+              </ul>
             </div>
-            <a href="#contatti" class="service-go" aria-label="Prenota: giovani adulti">→</a>
           </article>
           <article class="service s3 reveal">
             <div class="service-art ph" role="img" aria-label="Foto servizio"><span>Foto</span></div>
@@ -155,10 +202,16 @@
               <span class="service-num">03</span>
               <h3>Adulti</h3>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
-              <ul class="topics"><li>Stress</li><li>Coppia</li><li>Cambiamenti</li></ul>
+              <ul class="topics">
+                <li>Stress</li>
+                <li>Coppia</li>
+                <li>Cambiamenti</li>
+              </ul>
             </div>
-            <a href="#contatti" class="service-go" aria-label="Prenota: adulti">→</a>
           </article>
+        </div>
+        <div class="center reveal">
+          <a href="#contatti" class="btn btn-ghost">Richiedi un colloquio</a>
         </div>
       </div>
     </section>
@@ -184,7 +237,7 @@
         </ul>
         <div class="thoughts-end reveal">
           <p>Se ti riconosci anche in uno solo di questi pensieri, <strong>parlarne può aiutare.</strong></p>
-          <a href="#contatti" class="btn btn-primary">Prenota un primo colloquio</a>
+          <a href="#contatti" class="btn btn-primary">Richiedi un primo colloquio</a>
         </div>
       </div>
     </section>
@@ -196,20 +249,31 @@
           <p class="eyebrow">Contatti</p>
           <h2>Facciamo un primo passo insieme</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ti risponderò entro sed do eiusmod tempor.</p>
-          <div class="vcard-wrap"><div class="vcard">
-            <div class="vcard-head">
-              <span class="brand-mark" aria-hidden="true">G</span>
-              <div>
-                <strong>Dott.ssa Gaia Riccobono</strong>
-                <span>Psicologa · in studio e online</span>
+          <div class="vcard-wrap">
+            <div class="vcard">
+              <div class="vcard-head">
+                <span class="brand-mark" aria-hidden="true">G</span>
+                <div>
+                  <strong>Dott.ssa Gaia Riccobono</strong>
+                  <span>Psicologa · in studio e online</span>
+                </div>
               </div>
+              <ul class="contact-list">
+                <li><span class="ci"><i class="ico ico-pin" aria-hidden="true"></i></span>
+                  <div><small>Studio</small><a
+                      href="https://www.google.com/maps/search/?api=1&query=Piazza+Stazione+3,+23900+Lecco+LC"
+                      target="_blank" rel="noopener">Piazza Stazione 3, 23900 Lecco</a></div>
+                </li>
+                <li><span class="ci"><i class="ico ico-phone" aria-hidden="true"></i></span>
+                  <div><small>Telefono</small><a href="tel:+393452671279">345 267 1279</a></div>
+                </li>
+                <li><span class="ci"><i class="ico ico-mail" aria-hidden="true"></i></span>
+                  <div><small>Email</small><a href="mailto:riccobonogaia.psi@gmail.com">riccobonogaia.psi@gmail.com</a>
+                  </div>
+                </li>
+              </ul>
             </div>
-          <ul class="contact-list">
-            <li><span class="ci"><i class="ico ico-pin" aria-hidden="true"></i></span><div><small>Studio</small><a href="https://www.google.com/maps/search/?api=1&query=Piazza+Stazione+3,+23900+Lecco+LC" target="_blank" rel="noopener">Piazza Stazione 3, 23900 Lecco</a></div></li>
-            <li><span class="ci"><i class="ico ico-phone" aria-hidden="true"></i></span><div><small>Telefono</small><a href="tel:+393452671279">345 267 1279</a></div></li>
-            <li><span class="ci"><i class="ico ico-mail" aria-hidden="true"></i></span><div><small>Email</small><a href="mailto:riccobonogaia.psi@gmail.com">riccobonogaia.psi@gmail.com</a></div></li>
-          </ul>
-          </div></div>
+          </div>
         </div>
         <form class="form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <!-- Sostituisci con la tua access key di web3forms.com -->
@@ -231,7 +295,8 @@
           </fieldset>
           <label>Messaggio<textarea name="messaggio" rows="4"></textarea></label>
           <p class="form-note">Non inserire dati sanitari o informazioni sensibili nel messaggio.</p>
-          <label class="check"><input type="checkbox" required> <span>Ho letto l'<a href="privacy.html">informativa privacy</a></span></label>
+          <label class="check"><input type="checkbox" required> <span>Ho letto l'<a href="privacy.html">informativa
+                privacy</a></span></label>
           <button type="submit" class="btn btn-primary">Invia richiesta</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
@@ -247,7 +312,11 @@
         <span class="brand-mark" aria-hidden="true">G</span>
         <span class="brand-text">
           <strong>Dott.ssa Gaia Riccobono</strong>
-          <small>Psicologa - Ordine degli Psicologi della Lombardia n. 29606 - P.IVA 04162880126</small>
+          <span class="footer-meta">
+            <span>Psicologa</span>
+            <span>Ordine degli Psicologi della Lombardia n. 29606</span>
+            <span>P.IVA 04162880126</span>
+          </span>
         </span>
       </div>
       <nav class="footer-nav">
@@ -255,11 +324,13 @@
         <a href="privacy.html">Privacy</a>
       </nav>
     </div>
+    <p class="wrap copy">© 2026 Gaia Riccobono</p>
   </footer>
 
   <!-- CTA fissa mobile -->
-  <a href="#contatti" class="mobile-cta">Prenota un colloquio</a>
+  <a href="#contatti" class="mobile-cta">Richiedi un colloquio</a>
 
   <script src="script.js"></script>
 </body>
+
 </html>
