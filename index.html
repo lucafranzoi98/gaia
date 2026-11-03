@@ -168,6 +168,13 @@
           <h2>Nam nec ante sed lacinia</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.</p>
         </div>
+        <div class="tabs services-tabs">
+          <div class="tablist reveal" role="tablist" aria-label="Servizi">
+            <button type="button" role="tab" id="tab-supporto" aria-controls="panel-supporto" aria-selected="true">Supporto psicologico</button>
+            <button type="button" role="tab" id="tab-fuori" aria-controls="panel-fuori" aria-selected="false" tabindex="-1">Psicologo Fuori Studio</button>
+          </div>
+          <div class="tabpanels">
+          <div class="tabpanel" role="tabpanel" id="panel-supporto" aria-labelledby="tab-supporto">
         <div class="services">
           <article class="service s1 reveal">
             <div class="service-art ph" role="img" aria-label="Foto servizio"><span>Foto</span></div>
@@ -209,6 +216,15 @@
               </ul>
             </div>
           </article>
+        </div>
+          </div>
+          <div class="tabpanel" role="tabpanel" id="panel-fuori" aria-labelledby="tab-fuori" hidden>
+            <div class="fuori-text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          </div>
         </div>
         <div class="center reveal">
           <a href="#contatti" class="btn btn-ghost">Richiedi un colloquio</a>
@@ -281,19 +297,18 @@
           <input type="hidden" name="from_name" value="Sito Gaia Riccobono">
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
           <div class="field-row">
-            <label>Nome<input type="text" name="nome" required></label>
-            <label>Cognome<input type="text" name="cognome"></label>
+            <label><span>Nome<span class="req" aria-hidden="true">*</span></span><input type="text" name="nome" required></label>
+            <label><span>Cognome<span class="req" aria-hidden="true">*</span></span><input type="text" name="cognome" required></label>
           </div>
-          <label>Email<input type="email" name="email" required></label>
-          <label>Telefono<input type="tel" name="telefono"></label>
+          <label><span>Telefono<span class="req" aria-hidden="true">*</span></span><input type="tel" name="telefono" required></label>
           <fieldset class="seg">
             <legend>Preferisci</legend>
             <label><input type="radio" name="modalita" value="In studio" checked><span>In studio</span></label>
             <label><input type="radio" name="modalita" value="Online"><span>Online</span></label>
             <label><input type="radio" name="modalita" value="Indifferente"><span>Indifferente</span></label>
           </fieldset>
-          <label>Messaggio<textarea name="messaggio" rows="4"></textarea></label>
-          <p class="form-note">Non inserire dati sanitari o informazioni sensibili nel messaggio.</p>
+          <label><span>Messaggio<span class="req" aria-hidden="true">*</span></span><textarea name="messaggio" rows="4" required aria-describedby="msg-hint"></textarea>
+            <span class="form-hint" id="msg-hint">Non inserire dati sanitari o informazioni sensibili.</span></label>
           <label class="check"><input type="checkbox" required> <span>Ho letto l'<a href="privacy.html">informativa
                 privacy</a></span></label>
           <button type="submit" class="btn btn-primary">Invia richiesta</button>

@@ -223,6 +223,9 @@ mark {
 .band-circle.c2 { width: 180px; height: 180px; border: 28px solid var(--accent); right: -40px; top: -50px; }
 
 /* Servizi */
+.services-tabs .tablist { margin-bottom: 36px; }
+.services-tabs .tabpanel[hidden] { display: none; }
+.fuori-text { max-width: 660px; color: var(--ink-soft); }
 .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
 .service {
   position: relative; background: var(--surface); border-radius: 28px; padding: 14px;
@@ -327,7 +330,8 @@ mark {
 }
 .seg input:checked + span { background: var(--blue); border-color: var(--blue); color: #fff; }
 .seg input:focus-visible + span { outline: 2px solid var(--blue); outline-offset: 2px; }
-.form-note { font-size: .82rem; color: var(--ink-soft); margin: 0; background: var(--neutral); padding: 12px 16px; border-radius: 12px; }
+.form-hint { font-size: .72rem; font-weight: 400; font-style: italic; color: var(--ink-soft); margin-top: -2px; }
+.form .req { color: var(--blue); margin-left: 2px; }
 .form .check { display: flex; align-items: center; gap: 10px; font-weight: 400; }
 .form .check input { accent-color: var(--blue); width: 18px; height: 18px; }
 .form .btn { justify-self: start; }
