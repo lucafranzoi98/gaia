@@ -25,10 +25,10 @@
       <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav id="nav" class="nav">
         <a href="#chi-sono">Chi sono</a>
-        <a href="#approccio">Come lavoro</a>
+        <a href="#approccio">Approccio</a>
         <a href="#servizi">Servizi</a>
         <a href="#quando">Quando iniziare</a>
-        <a href="#contatti" class="nav-cta">Richiedi un colloquio</a>
+        <a href="#contatti" class="nav-cta">Richiedi un primo colloquio</a>
       </nav>
     </div>
   </header>
@@ -95,12 +95,17 @@
       <div class="wrap about-grid">
         <div class="about-media reveal">
           <span class="shape shape-blob" aria-hidden="true"></span>
-          <div class="ph ph-portrait" role="img" aria-label="Foto studio"><span>Foto 2 · Studio</span></div>
+          <picture class="about-photo">
+            <source type="image/webp" srcset="img/studio-480.webp 480w, img/studio.webp 800w"
+              sizes="(max-width: 960px) 90vw, 470px">
+            <img src="img/studio.jpg" width="800" height="1000" loading="lazy" decoding="async"
+              alt="Lo studio a Lecco: la scrivania al sole e la finestra con vista sulle montagne">
+          </picture>
         </div>
         <div class="about-text reveal">
           <p class="eyebrow">Chi sono</p>
           <h2>Lorem ipsum dolor sit amet, sono Gaia</h2>
-          <p class="albo">Psicologa iscritta all'Albo degli Psicologi della Regione Lombardia, n. 29606.</p>
+          <p class="albo">Psicologa iscritta all'Ordine degli Psicologi della Lombardia, n. 29606.</p>
           <div class="tabs">
             <div class="tablist" role="tablist" aria-label="Chi sono">
               <button type="button" role="tab" id="tab-visione" aria-controls="panel-visione" aria-selected="true">La mia visione</button>
@@ -120,11 +125,6 @@
               </ol>
             </div>
             </div>
-          </div>
-          <div class="stats">
-            <div><strong>00+</strong><span>anni di esperienza</span></div>
-            <div><strong>Lorem</strong><span>formazione specialistica</span></div>
-            <div><strong>2</strong><span>modalità: studio e online</span></div>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@
     </section>
 
     <!-- SERVIZI -->
-    <section id="servizi" class="section">
+    <section id="servizi" class="section section-services">
       <div class="wrap">
         <div class="section-head reveal">
           <p class="eyebrow">Servizi</p>
@@ -171,26 +171,23 @@
           </div>
           <div class="tabpanels">
           <div class="tabpanel" role="tabpanel" id="panel-supporto" aria-labelledby="tab-supporto">
-        <div class="services">
-          <article class="service s1 reveal">
-            <div class="service-art ph" role="img" aria-label="Foto servizio"><span>Foto</span></div>
+        <ul class="services reveal">
+          <li class="service">
+            <span class="service-ico"><i class="ico-lg ico-backpack" aria-hidden="true"></i></span>
+            <h3>Adolescenti</h3>
             <div class="service-body">
-              <span class="service-num">01</span>
-              <h3>Adolescenti</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
-              </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
               <ul class="topics">
                 <li>Scuola</li>
                 <li>Emozioni</li>
                 <li>Relazioni</li>
               </ul>
             </div>
-          </article>
-          <article class="service s2 reveal">
-            <div class="service-art ph" role="img" aria-label="Foto servizio"><span>Foto</span></div>
+          </li>
+          <li class="service">
+            <span class="service-ico"><i class="ico-lg ico-signpost" aria-hidden="true"></i></span>
+            <h3>Giovani adulti</h3>
             <div class="service-body">
-              <span class="service-num">02</span>
-              <h3>Giovani adulti</h3>
               <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
               <ul class="topics">
                 <li>Università</li>
@@ -198,12 +195,11 @@
                 <li>Autonomia</li>
               </ul>
             </div>
-          </article>
-          <article class="service s3 reveal">
-            <div class="service-art ph" role="img" aria-label="Foto servizio"><span>Foto</span></div>
+          </li>
+          <li class="service">
+            <span class="service-ico"><i class="ico-lg ico-sprout" aria-hidden="true"></i></span>
+            <h3>Adulti</h3>
             <div class="service-body">
-              <span class="service-num">03</span>
-              <h3>Adulti</h3>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
               <ul class="topics">
                 <li>Stress</li>
@@ -211,8 +207,8 @@
                 <li>Cambiamenti</li>
               </ul>
             </div>
-          </article>
-        </div>
+          </li>
+        </ul>
           </div>
           <div class="tabpanel" role="tabpanel" id="panel-fuori" aria-labelledby="tab-fuori" hidden>
             <div class="fuori-text">
@@ -223,7 +219,7 @@
           </div>
         </div>
         <div class="center reveal">
-          <a href="#contatti" class="btn btn-ghost">Richiedi un colloquio</a>
+          <a href="#contatti" class="btn btn-primary">Richiedi un primo colloquio</a>
         </div>
       </div>
     </section>
@@ -307,7 +303,7 @@
             <span class="form-hint" id="msg-hint">Non inserire dati sanitari o informazioni sensibili.</span></label>
           <label class="check"><input type="checkbox" required> <span>Ho letto l'<a href="privacy.html">informativa
                 privacy</a></span></label>
-          <button type="submit" class="btn btn-primary">Invia richiesta</button>
+          <button type="submit" class="btn btn-primary">Richiedi un primo colloquio</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -338,7 +334,7 @@
   </footer>
 
   <!-- CTA fissa mobile -->
-  <a href="#contatti" class="mobile-cta">Richiedi un colloquio</a>
+  <a href="#contatti" class="mobile-cta">Richiedi un primo colloquio</a>
 
   <script src="script.js"></script>
 </body>
