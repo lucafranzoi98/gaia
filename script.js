@@ -36,9 +36,8 @@ if (toggle && nav) {
   }));
 }
 
-// Form contatti (Web3Forms)
-const form = document.getElementById('contact-form');
-if (form) {
+// Form contatti (Web3Forms): modulo completo e, in v2, modulo rapido
+document.querySelectorAll('#contact-form, form.js-web3').forEach((form) => {
   const status = form.querySelector('.form-status');
   const submitBtn = form.querySelector('button[type=submit]');
   form.addEventListener('submit', async (e) => {
@@ -54,7 +53,7 @@ if (form) {
       const data = await res.json();
       if (data.success) {
         form.reset();
-        status.textContent = 'Grazie! Ho ricevuto il tuo messaggio e ti risponderò al più presto.';
+        status.textContent = 'Grazie! Ho ricevuto la tua richiesta: ti richiamerò appena possibile al numero che mi hai lasciato.';
       } else {
         status.textContent = 'Si è verificato un errore: ' + (data.message || 'riprova più tardi.');
       }
@@ -64,7 +63,7 @@ if (form) {
       submitBtn.disabled = false;
     }
   });
-}
+});
 
 // Tab "Chi sono"
 document.querySelectorAll('.tablist').forEach(list => {
