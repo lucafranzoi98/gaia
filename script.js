@@ -36,7 +36,7 @@ if (toggle && nav) {
   }));
 }
 
-// Form contatti (Web3Forms): modulo completo e, in v2, modulo rapido
+// Form contatti (Web3Forms)
 document.querySelectorAll('#contact-form, form.js-web3').forEach((form) => {
   const status = form.querySelector('.form-status');
   const submitBtn = form.querySelector('button[type=submit]');

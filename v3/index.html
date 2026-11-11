@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dott.ssa Gaia Riccobono · Psicologa (v2)</title>
+  <title>Dott.ssa Gaia Riccobono · Psicologa (v3)</title>
   <!-- Versione di prova: non indicizzare per non duplicare la home -->
   <meta name="robots" content="noindex">
   <link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -12,12 +12,13 @@
   <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/v2/v2.css">
+  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="/v3/v3.css">
 </head>
 
 <body>
 
-  <!-- HEADER (menu riordinato come le sezioni) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="#top" class="brand">
@@ -32,8 +33,9 @@
       <button class="menu-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav id="nav" class="nav">
         <a href="#quando">Quando iniziare</a>
-        <a href="#servizi">Servizi</a>
         <a href="#chi-sono">Chi sono</a>
+        <a href="#approccio">Approccio</a>
+        <a href="#servizi">Servizi</a>
         <a href="#come-funziona">Come funziona</a>
         <a href="#contatti" class="nav-cta">Richiedi un primo colloquio</a>
       </nav>
@@ -47,11 +49,11 @@
       <div class="wrap hero-grid">
         <div class="hero-text">
           <h1>Uno spazio dove essere ascoltati e dove la tua storia può prendere nuove strade.</h1>
-          <p class="lead">Sono una psicologa per il benessere specializzata in psicologia positiva, offro percorsi di
+          <p class="lead">Sono psicologa per il benessere, specializzata in psicologia positiva. Offro percorsi di
             supporto psicologico in presenza e online per adolescenti, giovani adulti e adulti.</p>
           <div class="btn-row">
             <a href="#contatti" class="btn btn-primary">Richiedi un primo colloquio</a>
-            <a href="#quando" class="btn btn-ghost">Quando può essere utile</a>
+            <a href="#approccio" class="btn btn-ghost">Scopri il mio approccio</a>
           </div>
         </div>
         <div class="hero-media">
@@ -69,10 +71,11 @@
       </div>
     </section>
 
-    <!-- 2. QUANDO INIZIARE (spostata in alto: è dove il lettore si riconosce) -->
+    <!-- 2. QUANDO INIZIARE -->
     <section id="quando" class="section section-lilac">
       <div class="wrap">
         <div class="section-head section-head-center reveal">
+          <p class="eyebrow">Quando iniziare</p>
           <h2>Ti è mai capitato di pensare…</h2>
         </div>
         <ul class="thoughts reveal">
@@ -89,93 +92,12 @@
         </ul>
         <div class="thoughts-end reveal">
           <p>Se ti riconosci anche in uno solo di questi pensieri, <strong>parlarne può aiutare.</strong></p>
-          <!-- Modulo rapido: solo nome e telefono, ti richiama Gaia -->
-          <form class="quick-form js-web3" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="9dbd1188-8f18-4328-8df0-692981315557">
-            <input type="hidden" name="subject" value="Richiesta di richiamata dal sito (v2, modulo rapido)">
-            <input type="hidden" name="from_name" value="Sito Gaia Riccobono">
-            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
-            <p class="quick-title">Lasciami il tuo numero, ti richiamo io</p>
-            <div class="quick-fields">
-              <label><span class="sr-only">Nome</span><input type="text" name="nome" placeholder="Nome" autocomplete="given-name" required></label>
-              <label><span class="sr-only">Telefono</span><input type="tel" name="telefono" placeholder="Telefono" autocomplete="tel" required></label>
-              <button type="submit" class="btn btn-primary">Richiamami</button>
-            </div>
-            <label class="quick-check"><input type="checkbox" name="privacy" value="Sì" required> <span>Ho letto l'<a href="/privacy.html">informativa privacy</a></span></label>
-            <p class="form-status" role="status" aria-live="polite"></p>
-          </form>
-          <a href="#contatti" class="quick-alt">Preferisci scrivermi un messaggio? Vai al modulo completo</a>
+          <a href="#contatti" class="btn btn-primary">Richiedi un primo colloquio</a>
         </div>
       </div>
     </section>
 
-    <!-- 3. SERVIZI (per chi) -->
-    <section id="servizi" class="section">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <h2>Un supporto pensato per le diverse fasi della vita</h2>
-        </div>
-        <div class="tabs services-tabs">
-          <div class="tablist reveal" role="tablist" aria-label="Servizi">
-            <button type="button" role="tab" id="tab-supporto" aria-controls="panel-supporto" aria-selected="true">Supporto psicologico</button>
-            <button type="button" role="tab" id="tab-fuori" aria-controls="panel-fuori" aria-selected="false" tabindex="-1">Psicologo Fuori Studio</button>
-          </div>
-          <div class="tabpanels">
-          <div class="tabpanel" role="tabpanel" id="panel-supporto" aria-labelledby="tab-supporto">
-            <p class="panel-intro">Un momento di ascolto e di confronto in cui capire ciò che stai vivendo, valorizzare le tue risorse e costruire strumenti per affrontare le difficoltà e i cambiamenti della vita.<br>
-              Gli obiettivi e i tempi sono concordati insieme e rivalutati lungo il percorso se necessario.</p>
-        <ul class="services reveal">
-          <li class="service">
-            <span class="service-ico"><i class="ico-lg ico-backpack" aria-hidden="true"></i></span>
-            <h3>Adolescenti</h3>
-            <div class="service-body">
-              <p>Un luogo di ascolto per chi sta attraversando i cambiamenti dell’adolescenza: le prime scelte, il rapporto con il corpo, con i coetanei e con la famiglia, la ricerca di sé. Dove poter dire ciò che si pensa e si sente, senza sentirsi giudicati.</p>
-              <ul class="topics">
-                <li>Emozioni</li>
-                <li>Scuola e coetanei</li>
-                <li>Immagine di sé</li>
-              </ul>
-              <p class="service-note">Per i minori è richiesto il consenso di chi esercita la responsabilità genitoriale.</p>
-            </div>
-          </li>
-          <li class="service">
-            <span class="service-ico"><i class="ico-lg ico-signpost" aria-hidden="true"></i></span>
-            <h3>Giovani adulti</h3>
-            <div class="service-body">
-              <p>Un supporto per chi si trova in un momento di passaggio: il percorso di studi o l’ingresso nel mondo del lavoro, l’autonomia, le relazioni, le scelte su di sé e sul proprio futuro. Un tempo per fare chiarezza su ciò che desideri e per costruire fiducia in te.</p>
-              <ul class="topics">
-                <li>Università e lavoro</li>
-                <li>Scelte per il futuro</li>
-                <li>Ansia e pressione</li>
-              </ul>
-            </div>
-          </li>
-          <li class="service">
-            <span class="service-ico"><i class="ico-lg ico-sprout" aria-hidden="true"></i></span>
-            <h3>Adulti</h3>
-            <div class="service-body">
-              <p>Un percorso per chi sente il bisogno di fermarsi e di prendersi cura di sé: momenti di difficoltà, cambiamenti, relazioni, stress, senso di insoddisfazione o di smarrimento. Il tempo per dare un senso a ciò che stai attraversando e ritrovare serenità e direzione.</p>
-              <ul class="topics">
-                <li>Stress</li>
-                <li>Cambiamenti di vita</li>
-                <li>Coppia e famiglia</li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-          </div>
-          <div class="tabpanel" role="tabpanel" id="panel-fuori" aria-labelledby="tab-fuori" hidden>
-            <div class="fuori-text">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. CHI SONO -->
+    <!-- 3. CHI SONO -->
     <section id="chi-sono" class="section section-alt">
       <div class="wrap about-grid">
         <div class="about-media reveal">
@@ -189,7 +111,8 @@
           </picture>
         </div>
         <div class="about-text reveal">
-          <h2>Il mio modo di lavorare e il percorso che mi ha portata qui</h2>
+          <p class="eyebrow">Chi sono</p>
+          <h2>Il percorso che mi ha portata qui</h2>
           <p class="albo">Psicologa iscritta all'Ordine degli Psicologi della Lombardia, n. 29606.</p>
           <div class="tabs">
             <div class="tablist" role="tablist" aria-label="Chi sono">
@@ -215,20 +138,31 @@
       </div>
     </section>
 
-    <!-- 5. APPROCCIO (fascia) -->
+    <!-- 4. APPROCCIO (fascia) -->
     <section id="approccio" class="band">
       <span class="band-circle c1" aria-hidden="true"></span>
       <span class="band-circle c2" aria-hidden="true"></span>
       <div class="wrap band-inner">
         <div class="band-head reveal">
+          <p class="eyebrow">Il mio approccio</p>
           <h2>Capire da dove vieni, costruire dove vuoi andare</h2>
         </div>
         <div class="approaches approaches-single">
           <div class="approach reveal">
             <h3>Psicologia Positiva</h3>
             <p>La psicologia positiva si occupa di ciò che permette alle persone di stare bene e di prosperare. Parte dalla convinzione che ognuno desideri una vita significativa e appagante e possa coltivare le proprie risorse per migliorare la qualità delle proprie esperienze.</p>
-            <p>Nel nostro lavoro ci concentreremo su risorse personali, emozioni positive, self-compassion, valori, senso e significato, autostima e autoefficacia, relazioni, per costruire strumenti che potrai portare con te al termine del percorso, e orientare la tua vita verso un maggiore benessere ed equilibrio.</p>
-            <p>Questo non significa ignorare ciò che è difficile: il malessere che porti è la prima cosa di cui ci prenderemo cura, ma non ci fermeremo qui. Insieme costruiremo nuovi modi di stare nelle situazioni, nel rapporto con te e con gli altri, e li metteremo in pratica nella quotidianità, fino a farne abitudini di benessere.</p>
+            <p>Nel nostro lavoro ci concentreremo su:</p>
+            <ul class="approach-topics">
+              <li>Risorse personali</li>
+              <li>Emozioni positive</li>
+              <li>Self-compassion</li>
+              <li>Valori</li>
+              <li>Senso e significato</li>
+              <li>Autostima e autoefficacia</li>
+              <li>Relazioni</li>
+            </ul>
+            <p>L’obiettivo è costruire <mark>strumenti che potrai portare con te</mark> al termine del percorso, e orientare la tua vita verso un maggiore benessere ed equilibrio.</p>
+            <p>Questo non significa ignorare ciò che è difficile: <mark>il malessere che porti è la prima cosa di cui ci prenderemo cura</mark>, ma non ci fermeremo qui. Insieme costruiremo nuovi modi di stare nelle situazioni, con te e con gli altri, fino a farne abitudini di benessere.</p>
           </div>
           <!-- DA GENNAIO: secondo approccio (cognitivo costruttivista).
                Per attivarlo: togliere "approaches-single" qui sopra e scommentare questo blocco.
@@ -242,10 +176,90 @@
       </div>
     </section>
 
+    <!-- 5. SERVIZI (per chi) -->
+    <section id="servizi" class="section section-alt">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Servizi</p>
+          <h2>Un supporto pensato per le diverse fasi della vita</h2>
+        </div>
+        <div class="tabs services-tabs">
+          <div class="tablist reveal" role="tablist" aria-label="Servizi">
+            <button type="button" role="tab" id="tab-supporto" aria-controls="panel-supporto" aria-selected="true">Supporto psicologico</button>
+            <button type="button" role="tab" id="tab-fuori" aria-controls="panel-fuori" aria-selected="false" tabindex="-1">Psicologo Fuori Studio</button>
+          </div>
+          <div class="tabpanels">
+          <div class="tabpanel" role="tabpanel" id="panel-supporto" aria-labelledby="tab-supporto">
+            <p class="panel-intro">Un momento di ascolto e di confronto in cui capire ciò che stai vivendo, valorizzare le tue risorse e costruire strumenti per affrontare le difficoltà e i cambiamenti della vita.<br>
+              Gli obiettivi e i tempi sono concordati insieme e rivalutati lungo il percorso se necessario.</p>
+        <ul class="services reveal">
+          <li class="service">
+            <span class="service-ico"><i class="ico-lg ico-backpack" aria-hidden="true"></i></span>
+            <h3>Adolescenti</h3>
+            <div class="service-body">
+              <p>Un luogo di ascolto per chi sta attraversando i cambiamenti dell’adolescenza e la ricerca di sé. Dove poter dire ciò che si pensa e si sente, senza sentirsi giudicati.</p>
+              <ul class="topics">
+                <li>Emozioni</li>
+                <li>Scuola e coetanei</li>
+                <li>Immagine di sé</li>
+              </ul>
+              <p class="service-note">Per i minori è richiesto il consenso di chi esercita la responsabilità genitoriale.</p>
+            </div>
+          </li>
+          <li class="service">
+            <span class="service-ico"><i class="ico-lg ico-signpost" aria-hidden="true"></i></span>
+            <h3>Giovani adulti</h3>
+            <div class="service-body">
+              <p>Un supporto per chi vive un momento di passaggio: lo studio, il lavoro, l’autonomia, le scelte sul proprio futuro. Un tempo per fare chiarezza su ciò che desideri e costruire fiducia in te.</p>
+              <ul class="topics">
+                <li>Università e lavoro</li>
+                <li>Scelte per il futuro</li>
+                <li>Ansia e pressione</li>
+              </ul>
+            </div>
+          </li>
+          <li class="service">
+            <span class="service-ico"><i class="ico-lg ico-sprout" aria-hidden="true"></i></span>
+            <h3>Adulti</h3>
+            <div class="service-body">
+              <p>Un percorso per chi sente il bisogno di fermarsi e prendersi cura di sé, nei momenti di difficoltà, cambiamento o smarrimento. Il tempo per dare un senso a ciò che stai attraversando e ritrovare serenità e direzione.</p>
+              <ul class="topics">
+                <li>Stress</li>
+                <li>Cambiamenti di vita</li>
+                <li>Coppia e famiglia</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+          </div>
+          <div class="tabpanel" role="tabpanel" id="panel-fuori" aria-labelledby="tab-fuori" hidden>
+            <div class="fuori-text">
+              <p>Un intervento psicologico <mark>a domicilio ad alta intensità</mark>, pensato per adolescenti e giovani adulti che attraversano un momento di forte sofferenza psicologica e sono poco motivati o impossibilitati a seguire una terapia in studio, o non riconoscono la loro problematica.</p>
+              <p>Le situazioni con cui si lavora più spesso:</p>
+              <ul class="topics">
+                <li>Ansia e ritiro sociale</li>
+                <li>Ritiro scolastico</li>
+                <li>Isolamento sociale</li>
+                <li>Hikikomori</li>
+              </ul>
+              <dl class="fuori-points">
+                <div><dt>Il mio ruolo</dt><dd>Essere una <mark>mente compagna</mark>: stare accanto, ascoltare e pensare insieme.</dd></div>
+                <div><dt>Per i genitori</dt><dd>In parallelo è previsto un percorso di <mark>terapia familiare</mark>, condotto da psicoterapeuti familiari della rete Psicologo Fuori Studio. <em>Non sarò io a tenere questa parte.</em></dd></div>
+                <div><dt>Il primo contatto</dt><dd>Avviene con voi genitori: insieme valutiamo la situazione e vi spiego la modalità di lavoro.</dd></div>
+              </dl>
+              <p class="fuori-link">Per maggiori informazioni sulla metodologia puoi consultare il sito di Psicologi Fuori Studio, Associazione Culturale promotrice del metodo, di cui faccio parte: <a href="https://www.psicologofuoristudio.it/" target="_blank" rel="noopener">psicologofuoristudio.it</a>.</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 6. COME FUNZIONA: studio/online + informazioni pratiche -->
     <section id="come-funziona" class="section">
       <div class="wrap">
         <div class="section-head reveal">
+          <p class="eyebrow">Come funziona</p>
           <h2>Le risposte alle domande che ti fai prima di chiamare</h2>
         </div>
         <div class="how-grid">
@@ -274,39 +288,43 @@
             </article>
           </div>
 
-          <!-- DATI GENERICI DA CONFERMARE: costo, durata, cadenza, piattaforma, disdetta, bonus -->
           <div class="faq reveal">
             <details open>
-              <summary>Quanto costa una seduta?</summary>
-              <p>Il primo colloquio costa 50 € e le sedute successive 60 €. Ricevi sempre la fattura.</p>
+              <summary>Come si svolge il primo incontro?</summary>
+              <p>È un momento per conoscerci: mi racconti cosa ti ha portato qui e cosa ti aspetti, e io ti spiego come lavoro. Non serve arrivare con le idee chiare né sapere cosa dire. Alla fine decidiamo insieme se e come proseguire. Il primo incontro ha la stessa durata e lo stesso costo degli altri.</p>
             </details>
             <details>
-              <summary>Le sedute sono detraibili?</summary>
-              <p>Sì. Le sedute con la psicologa sono spese sanitarie e puoi detrarle al 19% nella dichiarazione dei redditi, se paghi con un metodo tracciabile (carta o bonifico).</p>
+              <summary>Quanto durano gli incontri e con quale frequenza?</summary>
+              <p>Ogni incontro dura 50 minuti. In genere ci vediamo una volta a settimana o ogni due, ma la frequenza non è fissa: il percorso evolve e la decidiamo insieme, in base alle tue esigenze.</p>
             </details>
             <details>
-              <summary>Quanto dura una seduta e ogni quanto ci vediamo?</summary>
-              <p>Una seduta dura 50 minuti. Di solito ci vediamo ogni settimana o ogni due settimane: la frequenza la decidiamo insieme in base a quello che ti serve.</p>
+              <summary>Quanto dura un percorso?</summary>
+              <p>La durata dipende da te, da ciò che porti e dagli obiettivi che ci diamo. Non c’è un numero di incontri uguale per tutti: dopo i primi colloqui definiamo insieme una direzione e una durata indicativa, che verifichiamo e rivediamo lungo il percorso.</p>
             </details>
             <details>
-              <summary>Come si svolge il primo colloquio?</summary>
-              <p>È un incontro per conoscerci: mi racconti cosa ti porta e capiamo insieme se e come posso aiutarti. Non ti impegna a continuare.</p>
+              <summary>Quanto costa un colloquio?</summary>
+              <p>Un colloquio di 50 minuti costa 60 €.</p>
+              <p>Le sedute con la psicologa sono spese sanitarie e puoi detrarle al 19% nella dichiarazione dei redditi se paghi con un metodo tracciabile (carta o bonifico).</p>
             </details>
             <details>
               <summary>Come funzionano le sedute online?</summary>
-              <p>Ci vediamo in videochiamata: ti mando un link e ti colleghi da computer, tablet o telefono, senza installare nulla. Ti basta un posto tranquillo dove sentirti libero/a di parlare.</p>
+              <p>Ci vediamo in videochiamata: ti mando un link e ti colleghi da computer, tablet o telefono. Ti basta un posto tranquillo e riservato dove sentirti libero/a di parlare.</p>
             </details>
             <details>
               <summary>Quello che dico resta riservato?</summary>
-              <p>Sì. Sono tenuta al segreto professionale previsto dal Codice Deontologico degli Psicologi.</p>
+              <p>Sì. Tutto ciò che ci diciamo è coperto dal segreto professionale. Le eccezioni sono quelle previste dalla legge e dal codice deontologico, ad esempio i casi di grave pericolo per te o per altre persone, e te le spiego chiaramente all’inizio del percorso.</p>
             </details>
             <details>
-              <summary>Mio figlio è minorenne: come funziona?</summary>
-              <p>Per iniziare un percorso con un minore serve il consenso di entrambi i genitori o di chi esercita la responsabilità genitoriale. Possiamo parlarne insieme già al primo contatto.</p>
+              <summary>Per i minori serve il consenso dei genitori? Cosa viene condiviso con loro?</summary>
+              <p>Sì, per lavorare con un minore è necessario il consenso informato di entrambi i genitori, o di chi esercita la responsabilità genitoriale. Il percorso resta uno spazio del ragazzo o della ragazza: i contenuti dei colloqui non vengono riferiti ai genitori nel dettaglio. Con loro condivido l’andamento generale e ciò che può aiutarli a sostenere il percorso, secondo quanto definito all’inizio, con trasparenza verso il minore.</p>
             </details>
             <details>
-              <summary>Se non posso venire a una seduta?</summary>
-              <p>Avvisami almeno 24 ore prima e la spostiamo senza costi.</p>
+              <summary>Devo avere un “problema grave” per iniziare?</summary>
+              <p>No. Non serve stare male “abbastanza” né avere un problema preciso: puoi iniziare anche solo perché senti il bisogno di fermarti e capire cosa ti sta succedendo, o perché vuoi conoscerti meglio. Il primo incontro serve anche a capire insieme se e come ti posso essere utile.</p>
+            </details>
+            <details>
+              <summary>Che differenza c’è tra supporto psicologico e psicoterapia?</summary>
+              <p>La psicoterapia è un trattamento clinico che può essere svolto solo da professionisti con una specifica specializzazione, ed è indicata per forme di sofferenza più strutturate. Il supporto psicologico è un percorso di ascolto e di crescita, adatto a chi attraversa un momento di difficoltà o di cambiamento. Se durante il percorso emergesse l’utilità di un intervento diverso, ne parleremo insieme e ti indicherò colleghi a cui rivolgerti.</p>
             </details>
             <p class="emergency"><strong>In caso di emergenza</strong> non aspettare la richiamata: chiama il <a href="tel:112">112</a>.</p>
           </div>
@@ -318,16 +336,17 @@
     <section id="contatti" class="section section-contact">
       <div class="wrap contact-grid">
         <div class="contact-intro reveal">
+          <p class="eyebrow">Contatti</p>
           <h2>Facciamo un primo passo insieme</h2>
           <ol class="steps">
-            <li><strong>Compili il modulo</strong><span>Ci vogliono due minuti.</span></li>
+            <li><strong>Compili il modulo</strong><span>Inserisci i tuoi dati e, se vuoi, a quale servizio sei interessato.</span></li>
             <li><strong>Ti richiamo io</strong><span>Appena possibile, per ascoltare la tua richiesta e rispondere alle tue domande.</span></li>
             <li><strong>Fissiamo il primo colloquio</strong><span>Solo se lo desideri, in studio o online.</span></li>
           </ol>
         </div>
         <form class="form reveal js-web3" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="9dbd1188-8f18-4328-8df0-692981315557">
-          <input type="hidden" name="subject" value="Nuova richiesta dal sito (v2)">
+          <input type="hidden" name="subject" value="Nuova richiesta dal sito (v3)">
           <input type="hidden" name="from_name" value="Sito Gaia Riccobono">
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
           <div class="field-row">
@@ -335,13 +354,22 @@
             <label><span>Cognome<span class="req" aria-hidden="true">*</span></span><input type="text" name="cognome" required></label>
           </div>
           <label><span>Telefono<span class="req" aria-hidden="true">*</span></span><input type="tel" name="telefono" required></label>
+          <label><span>Servizio <span class="opt">(facoltativo)</span></span>
+            <select name="servizio">
+              <option value="">Scegli un servizio</option>
+              <option>Supporto psicologico · Adolescenti</option>
+              <option>Supporto psicologico · Giovani adulti</option>
+              <option>Supporto psicologico · Adulti</option>
+              <option>Psicologo Fuori Studio</option>
+              <option>Non so ancora</option>
+            </select></label>
           <fieldset class="seg">
             <legend>Preferisci</legend>
             <label><input type="radio" name="modalita" value="In studio" checked><span>In studio</span></label>
             <label><input type="radio" name="modalita" value="Online"><span>Online</span></label>
             <label><input type="radio" name="modalita" value="Indifferente"><span>Indifferente</span></label>
           </fieldset>
-          <label><span>Messaggio<span class="req" aria-hidden="true">*</span></span><textarea name="messaggio" rows="4" required aria-describedby="msg-hint"></textarea>
+          <label><span>Messaggio <span class="opt">(facoltativo)</span></span><textarea name="messaggio" rows="4" aria-describedby="msg-hint"></textarea>
             <span class="form-hint" id="msg-hint">Non inserire dati sanitari o informazioni sensibili.</span></label>
           <label class="check"><input type="checkbox" required> <span>Ho letto l'<a href="/privacy.html">informativa
                 privacy</a></span></label>

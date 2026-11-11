@@ -1,4 +1,4 @@
-/* ===== Solo per /v2: componenti nuovi, il resto viene da /style.css ===== */
+/* ===== Solo per la home: componenti della pagina principale, il resto viene da /style.css ===== */
 
 /* Come funziona: card studio/online a sinistra, domande frequenti a destra */
 .how-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
@@ -96,26 +96,12 @@
   .header-phone span { display: none; }
 }
 
-/* ===== Modulo rapido in "Quando iniziare" ===== */
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.quick-form {
-  max-width: 640px; margin: 0 auto; padding: 28px; border-radius: var(--r);
-  background: var(--surface); text-align: left; box-shadow: 0 30px 60px -30px rgba(27,43,64,.25);
-}
-.quick-form .hp { display: none; }
-.thoughts-end .quick-title { font: 700 1.15rem/1.3 var(--display); color: var(--ink); margin: 0 0 16px; }
-.quick-fields { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; }
-.quick-fields input {
-  width: 100%; font: 400 1rem var(--sans); padding: 14px 16px; border: 1.5px solid var(--line);
-  border-radius: var(--r-sm); background: var(--bg); color: var(--ink); transition: border-color .2s, background .2s;
-}
-.quick-fields input:focus { outline: none; border-color: var(--blue); background: #fff; }
-.quick-check { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: .88rem; }
-.quick-check input { accent-color: var(--blue); width: 18px; height: 18px; flex: none; }
-.thoughts-end .form-status { margin: 12px 0 0; font-size: .95rem; }
-.quick-alt { display: inline-block; margin-top: 18px; font-size: .92rem; font-weight: 600; color: var(--blue); }
-@media (max-width: 640px) {
-  .quick-form { padding: 22px 18px; }
-  .quick-fields { grid-template-columns: 1fr; }
-  .quick-fields .btn { justify-content: center; width: 100%; }
-}
+/* Psicologo Fuori Studio: grassetti in colore pieno, link al sito della rete */
+.fuori-text strong { color: var(--ink); }
+.fuori-text a { color: var(--blue); font-weight: 600; }
+
+/* Evidenziati nel testo dell'approccio (fascia blu): come nella mia visione, ma sul fondo scuro */
+.approach mark { font-weight: 600; color: #fff; background: linear-gradient(transparent 60%, rgba(245,143,41,.55) 60%, rgba(245,143,41,.55) 92%, transparent 92%); }
+
+/* Risposte FAQ su più paragrafi: spazio ridotto tra un paragrafo e l'altro */
+.faq details p:not(:last-child) { margin-bottom: 10px; }
