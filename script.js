@@ -85,3 +85,11 @@ document.querySelectorAll('.tablist').forEach(list => {
     });
   });
 });
+
+// Pannello colori temporaneo: per ora sempre visibile (sito in test)
+// (eliminare questo blocco e palette.js quando la palette è scelta)
+{
+  const s = document.createElement('script');
+  s.src = '/palette.js';
+  document.body.appendChild(s);
+}

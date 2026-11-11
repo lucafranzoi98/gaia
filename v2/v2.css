@@ -1,0 +1,60 @@
+/* ===== Solo per /v2: modifiche di prova rispetto alla home ===== */
+
+/* ---------- Font: titoli in serif, testo resta in sans ----------
+   Il font si può cambiare dal pannello colori (?colori). */
+:root {
+  --display: 'Newsreader', Georgia, serif;
+  --display-w: 400;
+}
+h1, h2, h3 { font-weight: var(--display-w); letter-spacing: -.01em; line-height: 1.12; }
+h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h1 em, h2 em { font-style: italic; }
+/* titoletti piccoli e dettagli: un filo più pieni per non sembrare esili */
+h3, .brand-text strong, .faq summary, .steps strong, .vcard-head strong, .fuori-points dt, .thoughts li {
+  font-weight: calc(var(--display-w) + 100);
+}
+
+/* ---------- Cerchi concentrici al posto dei cerchi pieni ----------
+   --ring: colore delle linee; --gap: distanza tra le linee */
+.rings, .shape-yellow, .about-shape-a, .band-circle.c1, .vcard-wrap::before, .nf-c1 {
+  --gap: 11px; --line: 1.2px;
+  background: repeating-radial-gradient(circle closest-side,
+    transparent 0 calc(var(--gap) - var(--line)), var(--ring) calc(var(--gap) - var(--line)) var(--gap));
+  border-radius: 50%;
+  filter: url(#mano);
+  opacity: 1;
+}
+
+/* Hero: i due cerchi di sempre, ma ad anelli */
+.hero .shape-yellow { --ring: color-mix(in srgb, var(--blue) 55%, transparent); }
+.hero .shape-sky { --ring: var(--accent); --gap: 7px; --line: 1.6px;
+  background: repeating-radial-gradient(circle closest-side,
+    transparent 0 calc(var(--gap) - var(--line)), var(--ring) calc(var(--gap) - var(--line)) var(--gap));
+  filter: url(#mano-lieve); }
+
+/* Chi sono: anelli dietro l'angolo della foto */
+.about-shape-a { --ring: color-mix(in srgb, var(--blue) 50%, transparent); width: 70%; top: -18%; left: -22%; }
+
+/* Fascia "Il mio approccio": anelli chiari sul fondo scuro */
+.band-circle.c1 { --ring: color-mix(in srgb, var(--on-band) 28%, transparent); width: 520px; height: 520px; left: -220px; bottom: -260px; }
+.band-circle.c2 { border: 0; --ring: var(--accent); --gap: 9px; --line: 2px; width: 200px; height: 200px;
+  background: repeating-radial-gradient(circle closest-side, transparent 0 7px, var(--accent) 7px 9px); border-radius: 50%; filter: url(#mano); }
+
+/* Contatti: anelli dietro il biglietto da visita */
+.vcard-wrap::before { --ring: color-mix(in srgb, var(--blue) 45%, transparent); width: 400px; height: 400px; right: -140px; bottom: -150px; }
+
+/* Card "In studio" / "Online": anelli bianchi al posto del cerchio chiaro */
+.mode::after {
+  background: repeating-radial-gradient(circle closest-side, transparent 0 9px, rgba(255,255,255,.35) 9px 10.2px);
+  filter: url(#mano);
+}
+.mode-online::after { background: repeating-radial-gradient(circle closest-side, transparent 0 9px, rgba(255,255,255,.75) 9px 10.2px); }
+
+/* I due pallini arancio restano pieni: sono il punto di colore */
+
+@media (max-width: 960px) {
+  .band-circle.c1 { width: 300px; height: 300px; left: -130px; bottom: -150px; }
+  .band-circle.c2 { width: 120px; height: 120px; }
+  .vcard-wrap::before { width: 280px; height: 280px; right: -90px; bottom: -110px; }
+}

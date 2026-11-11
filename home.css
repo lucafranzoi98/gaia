@@ -23,7 +23,7 @@
   transition: background-color .2s;
 }
 .faq details[open] summary::after {
-  --c: #fff;
+  --c: var(--on-primary);
   background:
     linear-gradient(var(--c), var(--c)) center / 12px 2px no-repeat,
     var(--blue);
@@ -84,7 +84,7 @@
   .header-phone {
     display: inline-flex; align-items: center; gap: 8px; flex: none;
     padding: 10px 16px; border-radius: 99px; background: var(--blue);
-    color: #fff; font: 600 .92rem/1 var(--sans); text-decoration: none;
+    color: var(--on-primary); font: 600 .92rem/1 var(--sans); text-decoration: none;
   }
 }
 @media (max-width: 420px) {
@@ -101,7 +101,35 @@
 .fuori-text a { color: var(--blue); font-weight: 600; }
 
 /* Evidenziati nel testo dell'approccio (fascia blu): come nella mia visione, ma sul fondo scuro */
-.approach mark { font-weight: 600; color: #fff; background: linear-gradient(transparent 60%, rgba(245,143,41,.55) 60%, rgba(245,143,41,.55) 92%, transparent 92%); }
+.approach mark { font-weight: 600; color: var(--on-band); background: linear-gradient(transparent 60%, color-mix(in srgb, var(--accent) 55%, transparent) 60%, color-mix(in srgb, var(--accent) 55%, transparent) 92%, transparent 92%); }
 
 /* Risposte FAQ su più paragrafi: spazio ridotto tra un paragrafo e l'altro */
 .faq details p:not(:last-child) { margin-bottom: 10px; }
+
+/* ===== Evidenziati, etichette approccio, Fuori Studio, modulo ===== */
+
+/* Un solo stile di evidenziato: il <mark> arancione, uguale ovunque */
+.fuori-text mark { font-weight: 600; color: var(--ink); --accent-soft: color-mix(in srgb, var(--accent) 22%, transparent); }
+
+/* Approccio: le aree di lavoro come etichette sul fondo blu */
+.approach-topics { list-style: none; padding: 0; margin: -4px 0 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+.approach-topics li {
+  font-size: .85rem; font-weight: 600; padding: 6px 14px; border-radius: 99px;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); color: var(--on-band);
+}
+
+/* Fuori Studio: tre punti brevi al posto dei paragrafi */
+.fuori-text .topics { margin: -4px 0 28px; }
+.fuori-points { margin: 0 0 24px; display: grid; gap: 18px; }
+.fuori-points dt { font: 700 1rem/1.3 var(--display); color: var(--ink); margin-bottom: 4px; }
+.fuori-points dd { margin: 0; }
+.fuori-link { font-size: .92rem; }
+
+/* Modulo: menu servizio e campi facoltativi */
+.form select {
+  font: 400 1rem var(--sans); padding: 14px 44px 14px 16px; border: 1.5px solid var(--line); border-radius: var(--r-sm);
+  color: var(--ink); width: 100%; appearance: none; -webkit-appearance: none; cursor: pointer; transition: border-color .2s, background-color .2s;
+  background: var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%231B2B40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 16px center;
+}
+.form select:focus { outline: none; border-color: var(--blue); background-color: var(--surface); }
+.form .opt { font-weight: 400; color: var(--ink-soft); }

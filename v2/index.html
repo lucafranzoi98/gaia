@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dott.ssa Gaia Riccobono · Psicologa (v3)</title>
+  <title>Dott.ssa Gaia Riccobono · Psicologa (v2)</title>
   <!-- Versione di prova: non indicizzare per non duplicare la home -->
   <meta name="robots" content="noindex">
   <link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -13,10 +13,20 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/home.css">
-  <link rel="stylesheet" href="/v3/v3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap">
+  <link rel="stylesheet" href="/v2/v2.css">
 </head>
 
 <body>
+  <!-- v2: filtro che rende "a mano" le linee dei cerchi concentrici -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="mano"><feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="14"/></filter>
+    <filter id="mano-lieve"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="1" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+  </svg>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -48,7 +58,7 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-text">
-          <h1>Uno spazio dove essere ascoltati e dove la tua storia può prendere nuove strade.</h1>
+          <h1>Uno spazio dove essere ascoltati e dove <em>la tua storia</em> può prendere nuove strade.</h1>
           <p class="lead">Sono psicologa per il benessere, specializzata in psicologia positiva. Offro percorsi di
             supporto psicologico in presenza e online per adolescenti, giovani adulti e adulti.</p>
           <div class="btn-row">
@@ -76,18 +86,19 @@
       <div class="wrap">
         <div class="section-head section-head-center reveal">
           <p class="eyebrow">Quando iniziare</p>
-          <h2>Ti è mai capitato di pensare…</h2>
+          <h2>Ti è mai capitato <em>di pensare…</em></h2>
         </div>
         <ul class="thoughts reveal">
-          <li>«Non riesco a staccare la testa»</li>
-          <li>«Mi sento bloccato/a»</li>
           <li>«Non so che strada prendere»</li>
-          <li>«Ultimamente sono sempre in ansia»</li>
+          <li>«Ho la testa che non si ferma mai»</li>
           <li>«Con gli altri faccio fatica»</li>
-          <li>«Non mi piaccio»</li>
-          <li>«È cambiato tutto e non so come gestirlo»</li>
-          <li>«Sono stanco/a di tutto»</li>
-          <li>«Con i miei non riusciamo a parlare»</li>
+          <li>«Faccio finta che vada tutto bene»</li>
+          <li>«Devo essere sempre all’altezza»</li>
+          <li>«Mi sento giù e non so perché»</li>
+          <li>«Ho giornate in cui tutto pesa»</li>
+          <li>«Le emozioni mi travolgono»</li>
+          <li>«Sono il mio critico più severo»</li>
+          <li>«Va tutto bene, eppure manca qualcosa»</li>
           <li>«Vorrei capirmi meglio»</li>
         </ul>
         <div class="thoughts-end reveal">
@@ -112,7 +123,7 @@
         </div>
         <div class="about-text reveal">
           <p class="eyebrow">Chi sono</p>
-          <h2>Il percorso che mi ha portata qui</h2>
+          <h2>Il mio modo di lavorare e <em>il percorso</em> che mi ha portata qui</h2>
           <p class="albo">Psicologa iscritta all'Ordine degli Psicologi della Lombardia, n. 29606.</p>
           <div class="tabs">
             <div class="tablist" role="tablist" aria-label="Chi sono">
@@ -145,7 +156,7 @@
       <div class="wrap band-inner">
         <div class="band-head reveal">
           <p class="eyebrow">Il mio approccio</p>
-          <h2>Capire da dove vieni, costruire dove vuoi andare</h2>
+          <h2>Capire da dove vieni, <em>costruire dove vuoi andare</em></h2>
         </div>
         <div class="approaches approaches-single">
           <div class="approach reveal">
@@ -337,7 +348,7 @@
       <div class="wrap contact-grid">
         <div class="contact-intro reveal">
           <p class="eyebrow">Contatti</p>
-          <h2>Facciamo un primo passo insieme</h2>
+          <h2>Facciamo un primo passo <em>insieme</em></h2>
           <ol class="steps">
             <li><strong>Compili il modulo</strong><span>Inserisci i tuoi dati e, se vuoi, a quale servizio sei interessato.</span></li>
             <li><strong>Ti richiamo io</strong><span>Appena possibile, per ascoltare la tua richiesta e rispondere alle tue domande.</span></li>
@@ -346,7 +357,7 @@
         </div>
         <form class="form reveal js-web3" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="9dbd1188-8f18-4328-8df0-692981315557">
-          <input type="hidden" name="subject" value="Nuova richiesta dal sito (v3)">
+          <input type="hidden" name="subject" value="Nuova richiesta dal sito (v2)">
           <input type="hidden" name="from_name" value="Sito Gaia Riccobono">
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
           <div class="field-row">
