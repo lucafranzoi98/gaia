@@ -58,6 +58,7 @@
   }
   </script>
   <link rel="preload" href="fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -66,6 +67,13 @@
 </head>
 
 <body>
+  <!-- Filtro che rende "a mano" le linee dei cerchi concentrici -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="mano"><feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="14"/></filter>
+    <filter id="mano-lieve"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="1" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+  </svg>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -97,7 +105,7 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-text">
-          <h1>Uno spazio dove essere ascoltati e dove la tua storia può prendere nuove strade.</h1>
+          <h1>Uno spazio dove essere ascoltati e dove <em>la tua storia</em> può prendere nuove strade.</h1>
           <p class="lead">Sono psicologa per il benessere, specializzata in psicologia positiva. Offro percorsi di
             supporto psicologico in presenza e online per adolescenti, giovani adulti e adulti.</p>
           <div class="btn-row">
@@ -125,7 +133,7 @@
       <div class="wrap">
         <div class="section-head section-head-center reveal">
           <p class="eyebrow">Quando iniziare</p>
-          <h2>Ti è mai capitato di pensare…</h2>
+          <h2>Ti è mai capitato <em>di pensare…</em></h2>
         </div>
         <ul class="thoughts reveal">
           <li>«Non so che strada prendere»</li>
@@ -162,7 +170,7 @@
         </div>
         <div class="about-text reveal">
           <p class="eyebrow">Chi sono</p>
-          <h2>Il mio modo di lavorare e il percorso che mi ha portata qui</h2>
+          <h2>Il mio modo di lavorare e <em>il percorso</em> che mi ha portata qui</h2>
           <p class="albo">Psicologa iscritta all'Ordine degli Psicologi della Lombardia, n. 29606.</p>
           <div class="tabs">
             <div class="tablist" role="tablist" aria-label="Chi sono">
@@ -195,7 +203,7 @@
       <div class="wrap band-inner">
         <div class="band-head reveal">
           <p class="eyebrow">Il mio approccio</p>
-          <h2>Capire da dove vieni, costruire dove vuoi andare</h2>
+          <h2>Capire da dove vieni, <em>costruire dove vuoi andare</em></h2>
         </div>
         <div class="approaches approaches-single">
           <div class="approach reveal">
@@ -387,7 +395,7 @@
       <div class="wrap contact-grid">
         <div class="contact-intro reveal">
           <p class="eyebrow">Contatti</p>
-          <h2>Facciamo un primo passo insieme</h2>
+          <h2>Facciamo un primo passo <em>insieme</em></h2>
           <ol class="steps">
             <li><strong>Compili il modulo</strong><span>Inserisci i tuoi dati e, se vuoi, a quale servizio sei interessato.</span></li>
             <li><strong>Ti richiamo io</strong><span>Appena possibile, per ascoltare la tua richiesta e rispondere alle tue domande.</span></li>

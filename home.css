@@ -101,7 +101,7 @@
 .fuori-text a { color: var(--blue); font-weight: 600; }
 
 /* Evidenziati nel testo dell'approccio (fascia blu): come nella mia visione, ma sul fondo scuro */
-.approach mark { font-weight: 600; color: var(--on-band); background: linear-gradient(transparent 60%, color-mix(in srgb, var(--accent) 55%, transparent) 60%, color-mix(in srgb, var(--accent) 55%, transparent) 92%, transparent 92%); }
+.approach mark { font-weight: 600; color: var(--on-band); background: linear-gradient(transparent 58%, color-mix(in srgb, var(--on-band) 22%, transparent) 58%, color-mix(in srgb, var(--on-band) 22%, transparent) 94%, transparent 94%); }
 
 /* Risposte FAQ su più paragrafi: spazio ridotto tra un paragrafo e l'altro */
 .faq details p:not(:last-child) { margin-bottom: 10px; }
@@ -127,9 +127,53 @@
 
 /* Modulo: menu servizio e campi facoltativi */
 .form select {
-  font: 400 1rem var(--sans); padding: 14px 44px 14px 16px; border: 1.5px solid var(--line); border-radius: var(--r-sm);
+  font: 400 1rem var(--sans); padding: 14px 44px 14px 16px; border: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent); border-radius: var(--r-sm);
   color: var(--ink); width: 100%; appearance: none; -webkit-appearance: none; cursor: pointer; transition: border-color .2s, background-color .2s;
-  background: var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%231B2B40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 16px center;
+  background: var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%231B2B40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 16px center;
 }
-.form select:focus { outline: none; border-color: var(--blue); background-color: var(--surface); }
+.form select:focus { outline: none; border-color: var(--blue); background-color: var(--surface); box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 15%, transparent); }
 .form .opt { font-weight: 400; color: var(--ink-soft); }
+
+/* ===== Cerchi concentrici (il filtro #mano è un SVG in cima a index.html) =====
+   --ring: colore delle linee; --gap: distanza tra le linee */
+.shape-yellow, .about-shape-a, .band-circle.c1, .vcard-wrap::before {
+  --gap: 11px; --line: 1.2px;
+  background: repeating-radial-gradient(circle closest-side,
+    transparent 0 calc(var(--gap) - var(--line)), var(--ring) calc(var(--gap) - var(--line)) var(--gap));
+  border-radius: 50%;
+  filter: url(#mano);
+  opacity: 1;
+}
+
+/* Hero: i due cerchi di sempre, ma ad anelli */
+.hero .shape-yellow { --ring: color-mix(in srgb, var(--blue) 55%, transparent); }
+.hero .shape-sky { --ring: var(--accent); --gap: 7px; --line: 1.6px;
+  background: repeating-radial-gradient(circle closest-side,
+    transparent 0 calc(var(--gap) - var(--line)), var(--ring) calc(var(--gap) - var(--line)) var(--gap));
+  filter: url(#mano-lieve); }
+
+/* Chi sono: anelli dietro l'angolo della foto */
+.about-shape-a { --ring: color-mix(in srgb, var(--blue) 50%, transparent); width: 70%; top: -18%; left: -22%; }
+
+/* Fascia "Il mio approccio": anelli chiari sul fondo scuro */
+.band-circle.c1 { --ring: color-mix(in srgb, var(--on-band) 28%, transparent); width: 520px; height: 520px; left: -220px; bottom: -260px; }
+.band-circle.c2 { border: 0; --ring: var(--accent); --gap: 9px; --line: 2px; width: 200px; height: 200px;
+  background: repeating-radial-gradient(circle closest-side, transparent 0 7px, var(--accent) 7px 9px); border-radius: 50%; filter: url(#mano); }
+
+/* Contatti: anelli dietro il biglietto da visita */
+.vcard-wrap::before { --ring: color-mix(in srgb, var(--blue) 45%, transparent); width: 400px; height: 400px; right: -140px; bottom: -150px; }
+
+/* Card "In studio" / "Online": anelli bianchi al posto del cerchio chiaro */
+.mode::after {
+  background: repeating-radial-gradient(circle closest-side, transparent 0 9px, rgba(255,255,255,.35) 9px 10.2px);
+  filter: url(#mano);
+}
+.mode-online::after { background: repeating-radial-gradient(circle closest-side, transparent 0 9px, rgba(255,255,255,.75) 9px 10.2px); }
+
+/* I due pallini arancio restano pieni: sono il punto di colore */
+
+@media (max-width: 960px) {
+  .band-circle.c1 { width: 300px; height: 300px; left: -130px; bottom: -150px; }
+  .band-circle.c2 { width: 120px; height: 120px; }
+  .vcard-wrap::before { width: 280px; height: 280px; right: -90px; bottom: -110px; }
+}

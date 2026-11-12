@@ -8,31 +8,36 @@
 @font-face { font-family: 'Plus Jakarta Sans'; font-style: italic; font-weight: 400; font-display: swap;
   src: url(fonts/plus-jakarta-sans-italic-latin.woff2) format('woff2'); }
 
-/* ===== Palette: blu #4464AD, lilla-azzurro #A4B0F5, accento arancio #F58F29 ===== */
+@font-face { font-family: 'Newsreader'; font-style: normal; font-weight: 300 600; font-display: swap;
+  src: url(fonts/newsreader-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Newsreader'; font-style: italic; font-weight: 300 600; font-display: swap;
+  src: url(fonts/newsreader-italic-latin.woff2) format('woff2'); }
+
+/* ===== Palette 3b: pervinca #6575B0, salvia #A9B7A0, giallo #F2C14E, fascia verde #6B805F ===== */
 :root {
-  --bg: #FBFAF6;
+  --bg: #F3F2EC;
   --surface: #FFFFFF;
-  --ink: #1B2340;
-  --ink-soft: #4E5672;
-  --line: #E3E5EF;
+  --ink: #2B2F3A;
+  --ink-soft: #676A6F;
+  --line: #DBDBD7;
 
-  --blue: #4464AD;        /* colore principale */
-  --blue-deep: #3A5697;   /* fascia "Il mio approccio" */
-  --sky: #A4B0F5;         /* lilla-azzurro, secondario */
-  --accent: #F58F29;      /* arancio: CTA, evidenziazioni, piccoli dettagli */
-  --accent-hover: #E77E15;
+  --blue: #6575B0;        /* principale: pervinca */
+  --blue-deep: #6B805F;   /* fascia "Il mio approccio": verde salvia scuro */
+  --sky: #A9B7A0;         /* secondario: salvia */
+  --accent: #F2C14E;      /* accento giallo: CTA, evidenziazioni */
+  --accent-hover: #E1B349;
   --accent-soft: color-mix(in srgb, var(--accent) 38%, transparent);
-  --neutral: #F1EFE9;     /* grigio caldo per piccoli fondi */
-  --lilac-soft: #EEF0FD;  /* fondo lilla chiarissimo (Quando iniziare) */
+  --neutral: #EBEAE5;     /* grigio caldo per piccoli fondi */
+  --lilac-soft: #F0F2EE;  /* fondo chiarissimo (Quando iniziare) */
   --on-primary: #FFFFFF;  /* testo sopra il colore principale */
-  --on-blue: #E4E8F7;     /* testo secondario su fondi blu */
+  --on-blue: #EDEEF6;     /* testo secondario su fondi blu */
   --on-band: #FFFFFF;     /* testo sulla fascia "Il mio approccio" */
-  --on-band-soft: #E4E8F7;
-  --on-sky: #2F3866;      /* testo secondario su fondo lilla */
-  --blue-soft: #5A77C2;   /* decorazioni sulla fascia blu */
-  --on-ink: #A9B6C7;      /* testo secondario nel footer */
+  --on-band-soft: #EDF0EC;
+  --on-sky: #444A4E;      /* testo secondario su fondo salvia */
+  --blue-soft: #7D8F72;   /* decorazioni sulla fascia */
+  --on-ink: #B5B6BA;      /* testo secondario nel footer */
 
-  --ph: #D6DBF2;          /* segnaposto foto */
+  --ph: #D8DFD4;          /* segnaposto foto */
 
   --display: 'Plus Jakarta Sans', system-ui, sans-serif;
   --sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -215,11 +220,11 @@ mark {
 
 /* Fascia approccio */
 .band { background: var(--blue-deep); color: var(--on-band); padding: 120px 0; position: relative; overflow: hidden; }
-.band .eyebrow { color: var(--sky); }
+.band .eyebrow { color: color-mix(in srgb, var(--on-band) 78%, transparent); }
 .band-inner { position: relative; z-index: 1; }
 .band-head { max-width: 640px; margin-bottom: 64px; }
 #panel-visione mark { font-weight: 600; --accent-soft: color-mix(in srgb, var(--accent) 22%, transparent); }
-.band h2 mark { background: linear-gradient(transparent 60%, color-mix(in srgb, var(--accent) 55%, transparent) 60%, color-mix(in srgb, var(--accent) 55%, transparent) 92%, transparent 92%); }
+.band h2 mark { background: linear-gradient(transparent 60%, color-mix(in srgb, var(--on-band) 22%, transparent) 60%, color-mix(in srgb, var(--on-band) 22%, transparent) 92%, transparent 92%); color: inherit; }
 .band-text { color: var(--on-band-soft); margin: 0; }
 .approaches { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 56px; align-items: stretch; }
 .approaches-single { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
@@ -257,7 +262,7 @@ mark {
 .section-head-center { text-align: center; margin-left: auto; margin-right: auto; }
 .thoughts {
   list-style: none; padding: 0; margin: 0 auto; max-width: 980px;
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 16px;
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 18px 16px;
 }
 .thoughts li {
   --rot: 0deg;
@@ -321,10 +326,11 @@ mark {
 }
 .form label { display: grid; gap: 6px; font-size: .88rem; font-weight: 600; }
 .form input[type=text], .form input[type=email], .form input[type=tel], .form textarea {
-  font: 400 1rem var(--sans); padding: 14px 16px; border: 1.5px solid var(--line); border-radius: var(--r-sm);
-  background: var(--bg); color: var(--ink); width: 100%; transition: border-color .2s, background .2s;
+  font: 400 1rem var(--sans); padding: 14px 16px; border: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent); border-radius: var(--r-sm);
+  background: var(--surface); color: var(--ink); width: 100%; transition: border-color .2s, background .2s;
 }
-.form input:focus, .form textarea:focus { outline: none; border-color: var(--blue); background: var(--surface); }
+.form input:hover, .form textarea:hover { border-color: color-mix(in srgb, var(--ink) 32%, transparent); }
+.form input:focus, .form textarea:focus { outline: none; border-color: var(--blue); background: var(--surface); box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue) 15%, transparent); }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .seg { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .seg legend { font-size: .88rem; font-weight: 600; margin-bottom: 8px; padding: 0; }
@@ -512,4 +518,27 @@ mark {
   .nf-c2 { width: 100px; height: 100px; border-width: 16px; left: -45px; bottom: 6%; }
   .nf-c3 { width: 42px; height: 42px; right: 8%; bottom: 4%; }
   .nf-actions { width: 100%; align-items: stretch; }
+}
+
+/* ===== Titoli in serif (Newsreader), testo in Plus Jakarta Sans ===== */
+:root {
+  --display: 'Newsreader', Georgia, serif;
+  --display-w: 400;
+}
+h1, h2, h3 { font-weight: var(--display-w); letter-spacing: -.01em; line-height: 1.12; }
+h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h1 em, h2 em { font-style: italic; }
+/* titoletti piccoli e dettagli: un filo più pieni per non sembrare esili */
+h3, .brand-text strong, .faq summary, .steps strong, .vcard-head strong, .fuori-points dt, .thoughts li {
+  font-weight: calc(var(--display-w) + 100);
+}
+
+/* "Il mio approccio" su desktop: titolo a sinistra, testo a destra.
+   Quando arriverà il secondo approccio, i due blocchi si impilano nella colonna di destra. */
+@media (min-width: 961px) {
+  .band-inner { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: start; }
+  .band-head { margin-bottom: 0; }
+  .approaches, .approaches-single { grid-template-columns: minmax(0, 1fr); max-width: none; gap: 40px; }
+  .approach-divider { width: 100%; height: 1px; }
 }
