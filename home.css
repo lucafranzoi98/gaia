@@ -100,8 +100,12 @@
 .fuori-text strong { color: var(--ink); }
 .fuori-text a { color: var(--blue); font-weight: 600; }
 
-/* Evidenziati nel testo dell'approccio (fascia blu): come nella mia visione, ma sul fondo scuro */
-.approach mark { font-weight: 600; color: var(--on-band); background: linear-gradient(transparent 58%, color-mix(in srgb, var(--on-band) 22%, transparent) 58%, color-mix(in srgb, var(--on-band) 22%, transparent) 94%, transparent 94%); }
+/* Evidenziati nel testo dell'approccio (fascia blu): come nella mia visione, con un verde salvia scurito */
+.approach mark {
+  --hl: color-mix(in srgb, var(--sky) 55%, #2B3A2A);
+  font-weight: 600; color: var(--on-band);
+  background: linear-gradient(transparent 58%, var(--hl) 58%, var(--hl) 94%, transparent 94%);
+}
 
 /* Risposte FAQ su più paragrafi: spazio ridotto tra un paragrafo e l'altro */
 .faq details p:not(:last-child) { margin-bottom: 10px; }
