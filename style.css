@@ -1,19 +1,15 @@
 /* ===== Font locale (nessuna richiesta a Google) ===== */
-@font-face { font-family: 'Plus Jakarta Sans'; font-style: normal; font-weight: 200 800; font-display: swap;
-  src: url(fonts/plus-jakarta-sans-latin.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: 'Plus Jakarta Sans'; font-style: normal; font-weight: 200 800; font-display: swap;
-  src: url(fonts/plus-jakarta-sans-latin-ext.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-@font-face { font-family: 'Plus Jakarta Sans'; font-style: italic; font-weight: 400; font-display: swap;
-  src: url(fonts/plus-jakarta-sans-italic-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Instrument Sans'; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url(fonts/instrument-sans-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Instrument Sans'; font-style: italic; font-weight: 400 700; font-display: swap;
+  src: url(fonts/instrument-sans-italic-latin.woff2) format('woff2'); }
 
 @font-face { font-family: 'Newsreader'; font-style: normal; font-weight: 300 600; font-display: swap;
   src: url(fonts/newsreader-latin.woff2) format('woff2'); }
 @font-face { font-family: 'Newsreader'; font-style: italic; font-weight: 300 600; font-display: swap;
   src: url(fonts/newsreader-italic-latin.woff2) format('woff2'); }
 
-/* ===== Palette 3b: pervinca #6575B0, salvia #A9B7A0, giallo #F2C14E, fascia verde #6B805F ===== */
+/* ===== Palette 3b: pervinca #6575B0, salvia #A2C18F, giallo #F2C14E, fascia pervinca #6575B0 (= principale) ===== */
 :root {
   --bg: #F3F2EC;
   --surface: #FFFFFF;
@@ -22,25 +18,25 @@
   --line: #DBDBD7;
 
   --blue: #6575B0;        /* principale: pervinca */
-  --blue-deep: #6B805F;   /* fascia "Il mio approccio": verde salvia scuro */
-  --sky: #A9B7A0;         /* secondario: salvia */
+  --blue-deep: #6575B0;   /* fascia "Il mio approccio": stesso colore principale */
+  --sky: #A2C18F;         /* secondario: salvia */
   --accent: #F2C14E;      /* accento giallo: CTA, evidenziazioni */
   --accent-hover: #E1B349;
   --accent-soft: color-mix(in srgb, var(--accent) 38%, transparent);
   --neutral: #EBEAE5;     /* grigio caldo per piccoli fondi */
-  --lilac-soft: #F0F2EE;  /* fondo chiarissimo (Quando iniziare) */
+  --lilac-soft: #EEF4EB;  /* fondo chiarissimo (Quando iniziare) */
   --on-primary: #FFFFFF;  /* testo sopra il colore principale */
   --on-blue: #EDEEF6;     /* testo secondario su fondi blu */
   --on-band: #FFFFFF;     /* testo sulla fascia "Il mio approccio" */
-  --on-band-soft: #EDF0EC;
-  --on-sky: #444A4E;      /* testo secondario su fondo salvia */
-  --blue-soft: #7D8F72;   /* decorazioni sulla fascia */
+  --on-band-soft: #EDEEF6;
+  --on-sky: #434C4B;      /* testo secondario su fondo salvia */
+  --blue-soft: #7786B9;   /* decorazioni sulla fascia */
   --on-ink: #B5B6BA;      /* testo secondario nel footer */
 
-  --ph: #D8DFD4;          /* segnaposto foto */
+  --ph: #D5E3CD;          /* segnaposto foto */
 
-  --display: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --display: 'Instrument Sans', system-ui, sans-serif;
+  --sans: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --w: 1160px;
   --header-h: 80px;
@@ -490,37 +486,71 @@ mark {
   .site-header .brand-icon { display: block; }
 }
 
-/* ===== Pagina 404 (alta quanto lo schermo) ===== */
-.nf-body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: var(--lilac-soft); }
-.nf-header { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; position: relative; z-index: 2; }
-.nf { flex: 1; position: relative; display: flex; align-items: center; overflow: hidden; padding: 24px 0 48px; }
+/* ===== Pagina 404: fondo colore principale, alta esattamente quanto lo schermo, senza scorrimento =====
+   Anelli concentrici a linee sottili come in home (filtri #mano / #mano-lieve in cima a 404.html).
+   Le misure verticali usano dvh, così tutto sta nello schermo anche su telefoni bassi. */
+.nf-body { --chiaro: var(--on-primary); --linea: color-mix(in srgb, var(--chiaro) 30%, transparent);
+  height: 100vh; height: 100dvh; overflow: hidden; display: flex; flex-direction: column;
+  background: var(--blue); color: var(--chiaro); }
+.nf-header { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; position: relative; z-index: 2; box-shadow: none; }
+.nf-header .header-inner { height: clamp(56px, 10dvh, var(--header-h)); }
+.nf-header .brand-text strong { color: var(--chiaro); }
+.nf-header .brand-text small { color: var(--on-blue); }
+.nf-header .brand-icon { filter: brightness(0) invert(1); }
+.nf { flex: 1; min-height: 0; position: relative; display: flex; align-items: center; overflow: hidden; padding: 0 0 2dvh; }
 .nf-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
 .nf-code {
-  font: 800 clamp(7rem, 22vw, 13rem)/1 var(--display); letter-spacing: -.06em; margin: 0;
-  color: var(--blue); opacity: .14; user-select: none;
+  font: 300 clamp(5rem, min(22vw, 24dvh), 13rem)/1 var(--display); letter-spacing: -.04em; margin: 0;
+  color: var(--chiaro); opacity: .22; user-select: none;
 }
-.nf-thought { margin: -0.9em 0 40px; }
-.nf-thought li { --rot: -2.5deg; background: var(--surface); }
-.nf h1 { max-width: 16ch; text-wrap: balance; }
-.nf-lead { max-width: 44ch; color: var(--ink-soft); font-size: 1.08rem; }
-.nf-actions { justify-content: center; margin-top: 16px; }
-.nf-phone { margin: 24px 0 0; font-size: .95rem; color: var(--ink-soft); }
-.nf-phone a { color: var(--blue); font-weight: 600; }
-.nf-circle { position: absolute; border-radius: 50%; z-index: 0; pointer-events: none; }
-.nf-c1 { width: 420px; height: 420px; background: var(--sky); opacity: .55; right: -140px; top: -120px; }
-.nf-c2 { width: 160px; height: 160px; border: 26px solid var(--accent); left: -50px; bottom: 12%; }
-.nf-c3 { width: 70px; height: 70px; background: var(--blue); right: 14%; bottom: 10%; }
-.nf-footer { padding: 18px 0 22px; font-size: .82rem; color: var(--ink-soft); text-align: center; }
+.nf-thought { margin: -0.9em 0 clamp(20px, 4.5dvh, 40px); }
+.nf-thought li { --rot: -1.5deg; background: var(--blue); color: var(--chiaro);
+  border: 1.2px solid color-mix(in srgb, var(--chiaro) 60%, transparent);
+  font-weight: 500; padding: 13px 24px 15px; line-height: 1.25;
+  animation: nf-galleggia 7s ease-in-out infinite; }
+@keyframes nf-galleggia { 50% { translate: 0 -5px; } }
+@media (prefers-reduced-motion: reduce) { .nf-thought li { animation: none; } }
+.nf h1 { max-width: 16ch; text-wrap: balance; color: var(--chiaro); margin-bottom: clamp(8px, 2dvh, 18px); }
+.nf-lead { max-width: 44ch; color: var(--on-blue); font-size: 1.08rem; margin: 0; }
+.nf-actions { justify-content: center; margin-top: clamp(16px, 4dvh, 32px); }
+.nf .btn-ghost { color: var(--chiaro); border-color: color-mix(in srgb, var(--chiaro) 70%, transparent); }
+.nf .btn-ghost:hover { background: color-mix(in srgb, var(--chiaro) 12%, transparent); }
+.nf .btn-primary { box-shadow: none; }
+.nf-phone { margin: clamp(12px, 3dvh, 24px) 0 0; font-size: .95rem; color: var(--on-blue); }
+.nf-phone a { color: var(--chiaro); font-weight: 600; }
+/* Anelli: --ring colore, --gap distanza tra le linee, --line spessore */
+.nf-circle { --ring: var(--linea); --gap: 11px; --line: 1.2px;
+  position: absolute; border-radius: 50%; z-index: 0; pointer-events: none;
+  background: repeating-radial-gradient(circle closest-side,
+    transparent 0 calc(var(--gap) - var(--line)), var(--ring) calc(var(--gap) - var(--line)) var(--gap));
+  filter: url(#mano); }
+.nf-c1 { width: 520px; height: 520px; right: -180px; top: -160px; }
+.nf-c2 { --ring: var(--accent); --gap: 7px; --line: 1.6px; width: 150px; height: 150px; left: -40px; bottom: 12%; filter: url(#mano-lieve); }
+.nf-c3 { --ring: color-mix(in srgb, var(--sky) 80%, transparent); --gap: 6px; width: 70px; height: 70px; right: 14%; bottom: 10%; filter: url(#mano-lieve); }
+.nf-footer { padding: 1.5dvh 0 2.5dvh; font-size: .78rem; color: var(--on-blue); opacity: .85; text-align: center; position: relative; z-index: 1; }
 .nf-footer p { margin: 0; }
 .nf-footer a { color: inherit; }
 @media (max-width: 640px) {
-  .nf-c1 { width: 240px; height: 240px; right: -110px; top: -70px; }
-  .nf-c2 { width: 100px; height: 100px; border-width: 16px; left: -45px; bottom: 6%; }
-  .nf-c3 { width: 42px; height: 42px; right: 8%; bottom: 4%; }
-  .nf-actions { width: 100%; align-items: stretch; }
+  .nf-c1 { width: 260px; height: 260px; right: -120px; top: -80px; }
+  .nf-c2 { width: 100px; height: 100px; left: -45px; bottom: 4%; }
+  .nf-c3 { width: 42px; height: 42px; right: 8%; bottom: 3%; }
+  .nf-actions { width: 100%; align-items: stretch; flex-direction: column; gap: 10px; }
+  .nf .btn { justify-content: center; padding: clamp(12px, 2dvh, 16px) 24px; }
+  .nf-lead { font-size: 1rem; }
+  .nf h1 { font-size: clamp(1.6rem, 4.2dvh, 2.2rem); }
+}
+/* Schermi molto bassi (telefono in orizzontale): via la nuvoletta, 404 più piccolo */
+@media (max-height: 560px) {
+  .nf-thought { display: none; }
+  .nf-code { font-size: clamp(3.5rem, 18dvh, 6rem); margin-bottom: 8px; }
+  .nf-actions { flex-direction: row; width: auto; }
+}
+@media (max-height: 420px) {
+  .nf-code, .nf-phone { display: none; }
+  .nf-c1 { width: 280px; height: 280px; right: -110px; top: -110px; }
 }
 
-/* ===== Titoli in serif (Newsreader), testo in Plus Jakarta Sans ===== */
+/* ===== Titoli in serif (Newsreader), testo in Instrument Sans ===== */
 :root {
   --display: 'Newsreader', Georgia, serif;
   --display-w: 400;

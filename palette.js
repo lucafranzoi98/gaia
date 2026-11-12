@@ -1,7 +1,7 @@
 /* =====================================================================
    PANNELLO COLORI TEMPORANEO
    Per ora è sempre visibile (sito in test).
-   Link a una palette precisa: ?colori=6575B0-A9B7A0-F2C14E-F3F2EC-2B2F3A-6B805F
+   Link a una palette precisa: ?colori=6575B0-A2C18F-F2C14E-F3F2EC-2B2F3A-6575B0
    Da eliminare (insieme al blocco in fondo a script.js) quando la palette è scelta.
    ===================================================================== */
 
@@ -13,7 +13,7 @@
    testo      = testo e footer
    fascia     = fondo della sezione "Il mio approccio" (facoltativo: se manca è il principale scurito) */
 const PALETTE = [
-  { nome: 'Attuale · Pervinca e salvia + giallo', principale: '#6575B0', secondario: '#A9B7A0', accento: '#F2C14E', sfondo: '#F3F2EC', testo: '#2B2F3A', fascia: '#6B805F' },
+  { nome: 'Attuale · Pervinca e salvia + giallo', principale: '#6575B0', secondario: '#A2C18F', accento: '#F2C14E', sfondo: '#F3F2EC', testo: '#2B2F3A', fascia: '#6575B0' },
   { nome: 'Precedente · Blu e arancio', principale: '#4464AD', secondario: '#A4B0F5', accento: '#F58F29', sfondo: '#FBFAF6', testo: '#1B2340', fascia: '#3A5697' },
   { nome: '1 · Blu polvere e oliva', principale: '#496677', secondario: '#9FB2CD', accento: '#ABAC5A', sfondo: '#F0EDE8', testo: '#271203' },
   { nome: '1b · Blu polvere, fascia cacao', principale: '#496677', secondario: '#9FB2CD', accento: '#ABAC5A', sfondo: '#F0EDE8', testo: '#271203', fascia: '#271203' },
@@ -32,7 +32,7 @@ const RUOLI = [
   ['fascia', 'Fascia', 'sezione "Il mio approccio"'],
 ];
 const KEY = 'gaia-colori';
-const ORIGINALI = { principale: '#6575B0', secondario: '#A9B7A0', accento: '#F2C14E' };
+const ORIGINALI = { principale: '#6575B0', secondario: '#A2C18F', accento: '#F2C14E' };
 
 /* ---------- utilità colore ---------- */
 const hex2rgb = h => { h = h.replace('#', ''); if (h.length === 3) h = [...h].map(c => c + c).join(''); return [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16)); };
@@ -99,7 +99,7 @@ async function ricoloraLoghi(p) {
       svgCache[src] ??= await fetch(src).then(r => r.text());
       let svg = svgCache[src];
       for (const k in ORIGINALI) svg = svg.replace(new RegExp(ORIGINALI[k], 'gi'), p[k]);
-      svg = svg.replace(/#F0F2EE/gi, variabili(p)['--lilac-soft']);
+      svg = svg.replace(/#EEF4EB/gi, variabili(p)['--lilac-soft']);
       img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
     } catch { /* se non riesce, resta il logo originale */ }
   }
