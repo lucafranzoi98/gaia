@@ -169,14 +169,31 @@ em { font-style: italic; }
   <ul class="contacts">
     <li><svg><use href="#i-phone"/></svg>345 267 1279</li>
     <li><svg><use href="#i-mail"/></svg>riccobonogaia.psi@gmail.com</li>
-    <li><svg><use href="#i-pin"/></svg>Piazza Stazione 3, Lecco · e online</li>
+    <li><svg><use href="#i-pin"/></svg>Piazza Stazione 3, Lecco</li>
     <li><svg><use href="#i-web"/></svg>gaiariccobono.it</li>
   </ul>
 </template>
 
 <div class="page">
   <h1>Biglietti da visita</h1>
-  <p>L’attuale e cinque varianti, fronte e retro, formato standard 85 × 55 mm. Sullo schermo sono ingrandite.</p>
+  <p>La versione finale, l’attuale e cinque varianti, fronte e retro, formato standard 85 × 55 mm. Sullo schermo sono ingrandite.</p>
+
+  <section class="variant finale">
+    <h2>Finale</h2>
+    <p>Fronte di D su bianco senza cerchi, retro di C su avorio.</p>
+    <div class="pair">
+      <div class="side"><small>Fronte</small>
+        <div class="card white d-front" data-finale>
+          <div class="l"><img src="../img/logo-chiaro.svg" alt=""></div>
+          <div class="r"><p class="name">Dott.ssa Gaia Riccobono</p><p class="role">Psicologa<br>Lecco e online</p></div>
+        </div></div>
+      <div class="side"><small>Retro</small>
+        <div class="card ivory c-back" data-finale>
+          <header><img src="../img/logo.svg" alt=""><div><p class="name">Dott.ssa Gaia Riccobono</p><p class="role">Psicologa</p></div></header>
+          <div data-contatti></div>
+        </div></div>
+    </div>
+  </section>
 
   <section class="variant">
     <h2>Attuale</h2>
@@ -245,7 +262,7 @@ em { font-style: italic; }
       <div class="side"><small>Retro</small>
         <div class="card white d-back">
           <div class="col"><div data-contatti></div></div>
-          <div><div class="qr" id="qr"></div><p class="cta">Prenota un<br><mark class="y">primo colloquio</mark></p></div>
+          <div><div class="qr"></div><p class="cta">Prenota un<br><mark class="y">primo colloquio</mark></p></div>
         </div></div>
     </div>
   </section>
@@ -279,15 +296,15 @@ em { font-style: italic; }
   try {
     const qr = qrcode(0, 'M');
     qr.addData('https://gaiariccobono.it/#contatti'); qr.make();
-    document.getElementById('qr').innerHTML = qr.createSvgTag({ scalable: true, margin: 0 })
-      .replace(/fill="black"/g, 'fill="#2B2F3A"');
-  } catch { document.getElementById('qr').textContent = 'QR'; }
+    const svg = qr.createSvgTag({ scalable: true, margin: 0 }).replace(/fill="black"/g, 'fill="#2B2F3A"');
+    document.querySelectorAll('.qr').forEach(el => el.innerHTML = svg);
+  } catch { document.querySelectorAll('.qr').forEach(el => el.textContent = 'QR'); }
 
   /* Pulsanti per cambiare il fondo di ogni lato (la scelta resta salvata in questo browser) */
   const FONDI = [['ivory', 'Avorio', '#F3F2EC'], ['white', 'Bianco', '#FFFFFF'], ['sage', 'Salvia', '#D3DEC7'], ['blue', 'Pervinca', '#6575B0']];
   const leggi = k => { try { return localStorage.getItem(k); } catch { return null; } };
   const scrivi = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
-  document.querySelectorAll('.card:not(.img)').forEach((card, i) => {
+  document.querySelectorAll('.card:not(.img):not([data-finale])').forEach((card, i) => {
     const key = 'biglietto-fondo-' + i;
     const bar = document.createElement('div'); bar.className = 'fondi';
     const nome = document.createElement('span');
