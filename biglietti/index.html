@@ -23,6 +23,9 @@ body { margin: 0; background: #E4E3DD; color: var(--ink); font-family: 'Instrume
 .page > p { color: var(--ink-soft); margin: 0 0 36px; max-width: 60ch; line-height: 1.5; }
 .variant { margin-bottom: 56px; }
 .variant h2 { font-size: 1.15rem; margin: 0 0 4px; letter-spacing: -.01em; }
+.altre { border-top: 1px solid rgba(0,0,0,.12); padding-top: 20px; }
+.altre summary { cursor: pointer; font-weight: 600; font-size: 1.05rem; padding: 6px 0; margin-bottom: 24px; color: var(--ink); }
+.altre:not([open]) summary { margin-bottom: 0; }
 .variant > p { margin: 0 0 18px; color: var(--ink-soft); line-height: 1.5; max-width: 70ch; }
 .pair { display: flex; flex-wrap: wrap; gap: 24px; }
 .side { display: grid; gap: 8px; }
@@ -46,7 +49,10 @@ body { margin: 0; background: #E4E3DD; color: var(--ink); font-family: 'Instrume
 .contacts svg { width: 2.8mm; height: 2.8mm; flex: none; stroke: var(--blue); }
 .blue .contacts svg { stroke: var(--accent); }
 mark { color: #fff; font-weight: 600; background: linear-gradient(transparent 58%, var(--hl) 58%, var(--hl) 94%, transparent 94%); padding: 0 .15em; }
-mark.y { color: inherit; background: linear-gradient(transparent 58%, color-mix(in srgb, var(--accent) 45%, transparent) 58%, color-mix(in srgb, var(--accent) 45%, transparent) 92%, transparent 92%); }
+/* stesso sottolineato giallo "a mano" del sito (style.css), in em perché il biglietto è in mm */
+mark.y { color: inherit; font-weight: 600; padding: 0 0 .22em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='8' viewBox='0 0 60 8'%3E%3Cpath d='M0 4.6C6 3.2 11 5.4 17 4.3S28 2.9 34 4.4 45 5.6 51 4.1 57 3.6 60 4.6' fill='none' stroke='%23E1B349' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x left bottom / 3.24em .43em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 em { font-style: italic; }
 
 /* anelli "a mano" come sul sito */
@@ -147,7 +153,7 @@ em { font-style: italic; }
 @media print {
   @page { size: 85mm 55mm; margin: 0; }
   body { background: none; }
-  .page > h1, .page > p, .variant h2, .variant > p, .side small, .fondi { display: none; }
+  .page > h1, .page > p, .altre summary, .variant h2, .variant > p, .side small, .fondi { display: none; }
   .page { padding: 0; } .variant { margin: 0; } .pair { display: block; } .side { display: block; }
   .card { zoom: 1; box-shadow: none; border-radius: 0; page-break-after: always; break-after: page; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -176,16 +182,16 @@ em { font-style: italic; }
 
 <div class="page">
   <h1>Biglietti da visita</h1>
-  <p>La versione finale, l’attuale e cinque varianti, fronte e retro, formato standard 85 × 55 mm. Sullo schermo sono ingrandite.</p>
+  <p>Le due proposte finali; sotto, l’attuale e le altre varianti, fronte e retro, formato standard 85 × 55 mm. Sullo schermo sono ingrandite.</p>
 
   <section class="variant finale">
-    <h2>Finale</h2>
-    <p>Fronte di D su bianco senza cerchi, retro di C su avorio.</p>
+    <h2>Proposta 1 · C</h2>
+    <p>Fronte salvia con la frase, retro avorio.</p>
     <div class="pair">
       <div class="side"><small>Fronte</small>
-        <div class="card white d-front" data-finale>
-          <div class="l"><img src="../img/logo-chiaro.svg" alt=""></div>
-          <div class="r"><p class="name">Dott.ssa Gaia Riccobono</p><p class="role">Psicologa<br>Lecco e online</p></div>
+        <div class="card sage c-front" data-finale><span class="rings"></span>
+          <p class="quote">Uno spazio dove essere ascoltati e dove <em>la tua storia</em> può prendere nuove strade.</p>
+          <span class="sign"><img src="../img/icona.svg" alt="">gaiariccobono.it</span>
         </div></div>
       <div class="side"><small>Retro</small>
         <div class="card ivory c-back" data-finale>
@@ -194,6 +200,26 @@ em { font-style: italic; }
         </div></div>
     </div>
   </section>
+
+  <section class="variant finale">
+    <h2>Proposta 2 · D</h2>
+    <p>Fronte bianco senza cerchi, retro con QR per prenotare.</p>
+    <div class="pair">
+      <div class="side"><small>Fronte</small>
+        <div class="card white d-front" data-finale>
+          <div class="l"><img src="../img/logo-chiaro.svg" alt=""></div>
+          <div class="r"><p class="name">Dott.ssa Gaia Riccobono</p><p class="role">Psicologa<br>Lecco e online</p></div>
+        </div></div>
+      <div class="side"><small>Retro</small>
+        <div class="card white d-back" data-finale>
+          <div class="col"><div data-contatti></div></div>
+          <div><div class="qr"></div><p class="cta">Prenota un<br><mark class="y">primo colloquio</mark></p></div>
+        </div></div>
+    </div>
+  </section>
+
+  <details class="altre">
+    <summary>Attuale e altre varianti (A–E)</summary>
 
   <section class="variant">
     <h2>Attuale</h2>
@@ -287,6 +313,7 @@ em { font-style: italic; }
         </div></div>
     </div>
   </section>
+  </details>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
@@ -295,7 +322,7 @@ em { font-style: italic; }
   document.querySelectorAll('[data-contatti]').forEach(el => el.replaceWith(t.content.cloneNode(true)));
   try {
     const qr = qrcode(0, 'M');
-    qr.addData('https://gaiariccobono.it/#contatti'); qr.make();
+    qr.addData('https://gaiariccobono.it/'); qr.make();
     const svg = qr.createSvgTag({ scalable: true, margin: 0 }).replace(/fill="black"/g, 'fill="#2B2F3A"');
     document.querySelectorAll('.qr').forEach(el => el.innerHTML = svg);
   } catch { document.querySelectorAll('.qr').forEach(el => el.textContent = 'QR'); }
