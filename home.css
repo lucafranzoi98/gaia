@@ -100,11 +100,10 @@
 .fuori-text strong { color: var(--ink); }
 .fuori-text a { color: var(--blue); font-weight: 600; }
 
-/* Evidenziati nel testo dell'approccio (fascia blu): come nella mia visione, con un verde salvia scurito */
+/* Evidenziati sulla fascia blu: stesso sottolineato (stile in style.css), testo bianco e giallo accento pieno */
 .approach mark {
-  --hl: color-mix(in srgb, var(--sky) 55%, #2B3A2A);
-  font-weight: 600; color: var(--on-band);
-  background: linear-gradient(transparent 58%, var(--hl) 58%, var(--hl) 94%, transparent 94%);
+  color: var(--on-band);
+  --onda: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='8' viewBox='0 0 60 8'%3E%3Cpath d='M0 4.6C6 3.2 11 5.4 17 4.3S28 2.9 34 4.4 45 5.6 51 4.1 57 3.6 60 4.6' fill='none' stroke='%23F2C14E' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 /* Risposte FAQ su più paragrafi: spazio ridotto tra un paragrafo e l'altro */
@@ -112,8 +111,7 @@
 
 /* ===== Evidenziati, etichette approccio, Fuori Studio, modulo ===== */
 
-/* Un solo stile di evidenziato: il <mark> arancione, uguale ovunque */
-.fuori-text mark { font-weight: 600; color: var(--ink); --accent-soft: color-mix(in srgb, var(--accent) 22%, transparent); }
+.fuori-text mark { color: var(--ink); }
 
 /* Approccio: le aree di lavoro come etichette sul fondo blu */
 .approach-topics { list-style: none; padding: 0; margin: -4px 0 20px; display: flex; flex-wrap: wrap; gap: 8px; }
@@ -263,8 +261,8 @@ body { font-size: 18.5px; }
 
 
 /* ---------- Colore: pochi colori, ognuno con un ruolo ----------
-   pervinca = testi in evidenza, linee, icone · salvia = fondi ed evidenziature
-   pervinca anche per la fascia "Il mio approccio" · giallo = solo pulsanti e piccoli anelli
+   pervinca = testi in evidenza, linee, icone · salvia = fondi
+   pervinca anche per la fascia "Il mio approccio" · giallo = pulsanti, piccoli anelli e sottolineato degli evidenziati
    Sequenza fondi: avorio → salvia → bianco → pervinca → avorio → bianco → avorio → grafite */
 :root {
   --sez-salvia: color-mix(in srgb, var(--sky) 42%, var(--bg));
@@ -276,8 +274,8 @@ body { font-size: 18.5px; }
 .section-contact { background: var(--bg); }
 #quando { --linea: color-mix(in srgb, var(--blue) 55%, transparent); }
 
-/* Evidenziature: salvia invece del giallo (il giallo resta ai pulsanti) */
-mark, #panel-visione mark, .fuori-text mark { --accent-soft: var(--evidenzia); color: var(--ink); }
+/* Evidenziature su fondo chiaro: testo scuro (lo stile è in style.css) */
+mark, #panel-visione mark, .fuori-text mark { color: var(--ink); }
 
 /* Nuvolette: niente pieni, ma quattro colori che si alternano (contorno, testo e un velo di fondo)
    più un lieve galleggiare. Il colore si sceglie con --c. */
