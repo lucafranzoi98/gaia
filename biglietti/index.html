@@ -55,6 +55,9 @@ mark.y { color: inherit; font-weight: 600; padding: 0 0 .22em;
   -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 em { font-style: italic; }
 
+/* D: evidenziatura gialla come nella prima versione */
+.d-back mark.y { font-weight: inherit; padding: 0 .1em; background: linear-gradient(transparent 58%, #F9E3AF 58%, #F9E3AF 92%, transparent 92%); }
+
 /* anelli "a mano" come sul sito */
 .rings { position: absolute; border-radius: 50%; --gap: 2.4mm; --line: .28mm; filter: url(#mano);
   background: repeating-radial-gradient(circle closest-side, transparent 0 calc(var(--gap) - var(--line)), var(--ring) calc(var(--gap) - var(--line)) var(--gap)); }
@@ -317,14 +320,13 @@ em { font-style: italic; }
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script src="qr.js"></script>
 <script>
   const t = document.getElementById('contatti');
   document.querySelectorAll('[data-contatti]').forEach(el => el.replaceWith(t.content.cloneNode(true)));
   try {
-    const qr = qrcode(0, 'M');
-    qr.addData('https://gaiariccobono.it/'); qr.make();
-    const svg = qr.createSvgTag({ scalable: true, margin: 0 }).replace(/fill="black"/g, 'fill="#2B2F3A"');
-    document.querySelectorAll('.qr').forEach(el => el.innerHTML = svg);
+    const svg = qrBiglietto('https://gaiariccobono.it/');
+  document.querySelectorAll('.qr').forEach(el => el.innerHTML = svg);
   } catch { document.querySelectorAll('.qr').forEach(el => el.textContent = 'QR'); }
 
   /* Pulsanti per cambiare il fondo di ogni lato (la scelta resta salvata in questo browser) */
